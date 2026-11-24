@@ -10,7 +10,7 @@
 
 | Artefato | Estado |
 |---|---|
-| Repositório `repos/mosaico` (git, branch `main`) | criado, sem commit de código |
+| Repositório `repos/mosaico` | público em <https://github.com/fgscaglioni/mosaico> (branch `main`) |
 | `README.md` | escrito |
 | `LICENSE` (MIT) | criado |
 | `docs/specs/PROJECT.md` | especificação aprovada (requisitos R1–R14, verificação V1–V9) |
