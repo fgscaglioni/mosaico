@@ -1,6 +1,6 @@
 # STATE.md — Mosaico
 
-**Fase:** servidor e sincronização concluídos; testes E2E Playwright a seguir
+**Fase:** testes E2E concluídos; deploy em container a seguir
 **Atualizado:** 2026-11-24
 **Prazo duro:** 2026-11-30 23h59 (America/Sao_Paulo) · submissão planejada para 29/11
 
@@ -31,9 +31,10 @@ requisito está nas specs e o que é execução está no `IMPLEMENTATION.md`.
 | `content/help.json` | 4 canais de ajuda, validados por `HelpSchema` |
 | `docs/decisions/` | 4 ADRs + índice |
 | `src/`, `tests/`, `server.mjs` | scaffold + `content.ts` + `cartas.test.ts` (7) + domínio + store + telas (`Home`, `Theme`, `Card`, `Progress`, `Help`, `Panel`) + link global no `App` + `server.mjs` + `pratica.test.ts` (29) + `pratica-evento.test.ts` (4) + `ajuda.test.ts` (7) + `sync.test.ts` (4) = **51 testes verdes**, `svelte-check 0 errors` |
-| `e2e/`, deploy, vídeo, submissão | **não existem** |
+| `e2e/` | `offline.spec.ts` (V1–V4) e `ajuda.spec.ts` (V1, V2, V4, V5) = **8 testes E2E verdes** |
+| deploy, vídeo, submissão | **não existem** |
 
-Progresso do plano de implementação: **T7 de T21** (servidor e sincronização completa).
+Progresso do plano de implementação: **T8 de T21** (testes E2E concluídos).
 
 ## Handoff
 
