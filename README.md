@@ -42,4 +42,8 @@ implementação, que fica no vault: `01-Projects/hackbr2026/Mosaico - Plano de i
 
 ## Licença
 
-MIT. Ver `LICENSE` (criada na Fase 0 do plano).
+MIT, sobre código e conteúdo. Ver [`LICENSE`](LICENSE).
+
+O texto das cartas cita leis e documentos públicos (Lei 13.185/2015, Lei 7.716/1989, Lei 10.639/2003,
+Lei 14.164/2021, ECA, BNCC), sem reprodução de material protegido. Se um recurso de terceiro entrar no
+projeto (fonte tipográfica, ícone), o aviso da licença dele vai junto no repositório.

@@ -12,6 +12,7 @@
 |---|---|
 | Repositório `repos/mosaico` (git, branch `main`) | criado, sem commit de código |
 | `README.md` | escrito |
+| `LICENSE` (MIT) | criado |
 | `docs/specs/PROJECT.md` | especificação aprovada (requisitos R1–R14, verificação V1–V9) |
 | `docs/specs/STATE.md` | este arquivo |
 | `docs/decisions/` | 4 ADRs + índice |
