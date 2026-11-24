@@ -7,7 +7,7 @@ const DEVICE_STORE = "device";
 export interface StoredEvent {
   event_id: string;
   device_id: string;
-  type: "answer" | "help_open";
+  type: "answer" | "help_open" | "help_opened";
   card_id?: string;
   theme?: string;
   correct?: boolean;

@@ -66,7 +66,7 @@ export function badgesFor(events: Event[]): BadgeId[] {
   const hasRetryCorrect = events.some((e) => e.type === "answer" && e.correct && (e.attempt ?? 1) > 1);
   if (hasRetryCorrect) earned.push("acerto-retentativa");
 
-  const openedHelp = events.some((e) => e.type === "help_open");
+  const openedHelp = events.some((e) => e.type === "help_open" || e.type === "help_opened");
   if (openedHelp) earned.push("abriu-ajuda");
 
   return earned;

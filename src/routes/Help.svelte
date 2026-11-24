@@ -1,6 +1,205 @@
 <script lang="ts">
+  import { onMount } from "svelte";
+  import { navigate } from "../lib/router.svelte";
+  import { initStore, recordHelpOpen } from "../lib/store.svelte";
+  import { helpContent } from "../lib/content";
+
+  onMount(async () => {
+    await initStore();
+    await recordHelpOpen();
+  });
+
+  function goBack() {
+    navigate("/");
+  }
 </script>
 
-<h1>Ajuda</h1>
-<p>Canais de ajuda e encaminhamento.</p>
-<a href="#/">Início</a>
+<header class="topo">
+  <button class="voltar" onclick={goBack} aria-label="Voltar ao início">←</button>
+  <h1>Canais de Ajuda</h1>
+</header>
+
+<main class="tela-ajuda">
+  <section class="dica-adulto" aria-label="Orientação principal">
+    <div class="dica-icone">💡</div>
+    <p class="dica-texto">{helpContent.adult_tip}</p>
+  </section>
+
+  <section class="lista-canais" aria-label="Canais de atendimento">
+    <h2>Canais oficiais e gratuitos</h2>
+    <div class="canais-grid">
+      {#each helpContent.channels as channel}
+        <div class="canal-card">
+          <div class="canal-info">
+            <span class="canal-nome">{channel.name}</span>
+            <span class="canal-what">{channel.what}</span>
+          </div>
+          {#if channel.number}
+            <a href="tel:{channel.number}" class="canal-numero" aria-label="Ligar para {channel.name} no número {channel.number}">
+              <span class="icone-tel">📞</span>
+              <span>{channel.number}</span>
+            </a>
+          {:else}
+            <span class="canal-sem-numero">Procure na sua cidade</span>
+          {/if}
+        </div>
+      {/each}
+    </div>
+  </section>
+
+  <section class="aviso-seguranca" aria-label="Informações importantes">
+    <p>O Mosaico não armazena relatos, não envia mensagens e não substitui os canais oficiais de acolhimento.</p>
+  </section>
+</main>
+
+<style>
+  .topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .voltar {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    color: var(--ink);
+    cursor: pointer;
+    border-radius: var(--raio-botao);
+  }
+
+  .voltar:hover,
+  .voltar:focus-visible {
+    background: var(--rule);
+  }
+
+  .topo h1 {
+    margin: 0;
+    font-size: 22px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .tela-ajuda {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 16px 32px;
+  }
+
+  .dica-adulto {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 20px;
+    border-radius: var(--raio);
+    margin-bottom: 24px;
+  }
+
+  .dica-icone {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+
+  .dica-texto {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .lista-canais h2 {
+    font-size: 18px;
+    margin: 0 0 16px;
+  }
+
+  .canais-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .canal-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--paper);
+    border: 2px solid var(--rule);
+    border-radius: var(--raio-botao);
+    padding: 16px;
+  }
+
+  .canal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .canal-nome {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .canal-what {
+    font-size: 13px;
+    opacity: 0.8;
+    line-height: 1.3;
+  }
+
+  .canal-numero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 8px 16px;
+    background: var(--accent);
+    color: var(--paper);
+    border-radius: var(--raio-botao);
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .canal-numero:hover,
+  .canal-numero:focus-visible {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+
+  .icone-tel {
+    font-size: 14px;
+  }
+
+  .canal-sem-numero {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 12px;
+    background: var(--rule);
+    border-radius: var(--raio-botao);
+    color: var(--ink);
+    text-align: center;
+  }
+
+  .aviso-seguranca {
+    text-align: center;
+    padding: 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    opacity: 0.7;
+    line-height: 1.4;
+  }
+
+  .aviso-seguranca p {
+    margin: 0;
+  }
+</style>

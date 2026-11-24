@@ -10,7 +10,7 @@ export type BadgeId =
 
 export interface Event {
   id: string;
-  type: "answer" | "help_open";
+  type: "answer" | "help_open" | "help_opened";
   timestamp: number;
   day: string;
   card_id?: string;

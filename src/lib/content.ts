@@ -1,5 +1,22 @@
 import { z } from "zod";
 import cardsJson from "../../content/cards.pt-BR.json";
+import helpJson from "../../content/help.json";
+
+export const HelpChannelSchema = z.object({
+  name: z.string().min(1),
+  what: z.string().min(1),
+  number: z.string().nullable(),
+});
+
+export const HelpSchema = z.object({
+  adult_tip: z.string().min(1),
+  channels: z.array(HelpChannelSchema).min(1),
+});
+
+export type HelpChannel = z.infer<typeof HelpChannelSchema>;
+export type HelpData = z.infer<typeof HelpSchema>;
+
+export const helpContent: HelpData = HelpSchema.parse(helpJson);
 
 export const CardSchema = z.object({
   id: z.string().min(1),

@@ -207,7 +207,7 @@ export async function recordHelpOpen(): Promise<void> {
   const event = {
     event_id: crypto.randomUUID(),
     device_id: deviceId,
-    type: "help_open" as const,
+    type: "help_opened" as const,
     local_day: localDay(),
     client_ts: Date.now(),
     catalog_version: catalog.catalog_version,
