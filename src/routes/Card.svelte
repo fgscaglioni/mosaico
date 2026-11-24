@@ -5,6 +5,8 @@
   import { catalog } from "../lib/content";
 
   let selectedOption = $state<number | null>(null);
+  let feedbackVisible = $state(false);
+  let feedbackType = $state<"correct" | "wrong" | null>(null);
 
   onMount(async () => {
     await initStore();
@@ -34,15 +36,25 @@
     if (selectedOption === null || !store.currentCard) return;
     await recordAnswer(store.currentCard.id, selectedOption);
     selectedOption = null;
+    if (store.feedback) {
+      feedbackType = store.feedback.type;
+      feedbackVisible = true;
+    }
+  }
+
+  function closeFeedback() {
+    feedbackVisible = false;
+    feedbackType = null;
+    clearFeedback();
   }
 
   function handleRetry() {
     retry();
     selectedOption = null;
+    closeFeedback();
   }
 
   function nextCard() {
-    clearFeedback();
     const nextId = store.queue.find((id: string) => {
       const c = catalog.cards.find((x) => x.id === id);
       return c?.theme === store.currentTheme;
@@ -53,6 +65,7 @@
     } else {
       navigate("/tema");
     }
+    closeFeedback();
   }
 
   function goBack() {
@@ -107,45 +120,69 @@
         Confirmar resposta
       </button>
     {/if}
+  </main>
 
-    {#if store.feedback}
-      <section
-        class="feedback"
-        class:sucesso={store.feedback.type === "correct"}
-        class:erro={store.feedback.type === "wrong"}
+  {#if feedbackVisible && store.feedback}
+    <div class="modal-overlay">
+      <!-- Partículas de celebração no acerto -->
+      {#if feedbackType === "correct"}
+        <div class="particulas" aria-hidden="true">
+          <span class="particula p1">✦</span>
+          <span class="particula p2">★</span>
+          <span class="particula p3">●</span>
+          <span class="particula p4">✦</span>
+          <span class="particula p5">★</span>
+          <span class="particula p6">●</span>
+        </div>
+      {/if}
+
+      <div
+        class="modal"
+        class:sucesso={feedbackType === "correct"}
+        class:erro={feedbackType === "wrong"}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-titulo"
+        aria-describedby="modal-mensagem"
         aria-live="polite"
       >
-        <div class="feedback-cabecalho">
-          <span class="feedback-icone">
-            {store.feedback.type === "correct" ? "✓" : "✗"}
-          </span>
-          <span class="feedback-titulo">
-            {store.feedback.type === "correct" ? "Muito bem!" : "Não foi dessa vez"}
-          </span>
-          <span class="feedback-xp">+{store.feedback.xp} XP</span>
-        </div>
+        <div class="modal-conteudo">
+          <div class="modal-icone" aria-hidden="true">
+            {#if feedbackType === "correct"}
+              <span class="icone-acerto">✓</span>
+            {:else}
+              <span class="icone-erro">✗</span>
+            {/if}
+          </div>
 
-        <p class="feedback-mensagem">{store.feedback.message}</p>
+          <h2 id="modal-titulo" class="modal-titulo">
+            {feedbackType === "correct" ? "Muito bem!" : "Não foi dessa vez"}
+          </h2>
 
-        <div class="feedback-fonte">
-          <span class="rotulo">Fonte</span>
-          <span>{store.currentCard.source}</span>
-        </div>
+          <span class="modal-xp">+{store.feedback.xp} XP</span>
 
-        <div class="feedback-acoes">
-          {#if store.showRetry}
-            <button class="botao-tentar" onclick={handleRetry}>
-              Tentar novamente
-            </button>
-          {:else}
-            <button class="botao-proxima" onclick={nextCard}>
-              Próxima carta
-            </button>
-          {/if}
+          <p id="modal-mensagem" class="modal-mensagem">{store.feedback.message}</p>
+
+          <div class="modal-fonte">
+            <span class="rotulo">Fonte</span>
+            <span>{store.currentCard.source}</span>
+          </div>
+
+          <div class="modal-acoes">
+            {#if store.showRetry}
+              <button class="botao-tentar" onclick={handleRetry}>
+                Tentar novamente
+              </button>
+            {:else}
+              <button class="botao-proxima" onclick={nextCard}>
+                Próxima carta
+              </button>
+            {/if}
+          </div>
         </div>
-      </section>
-    {/if}
-  </main>
+      </div>
+    </div>
+  {/if}
 {:else}
   <main class="tela-carta carregando">
     <p>Carregando carta...</p>
@@ -316,90 +353,225 @@
     cursor: not-allowed;
   }
 
-  .feedback {
-    border-radius: var(--raio);
-    padding: 20px;
-    margin-top: 24px;
+  .carregando {
+    text-align: center;
+    padding-top: 48px;
   }
 
-  .feedback.sucesso {
-    background: rgba(47, 107, 79, 0.1);
-    border: 2px solid var(--ok);
-  }
-
-  .feedback.erro {
-    background: rgba(181, 52, 43, 0.1);
-    border: 2px solid var(--erro);
-  }
-
-  .feedback-cabecalho {
+  /* Modal overlay */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(27, 24, 21, 0.75);
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
+    justify-content: center;
+    padding: 24px;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-out;
+    overflow: hidden;
   }
 
-  .feedback-icone {
-    font-size: 20px;
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Modal genérico */
+  .modal {
+    width: 100%;
+    max-width: 440px;
+    background: var(--paper);
+    border-radius: var(--raio);
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Animação no Acerto: pop saltitante e luminoso */
+  .modal.sucesso {
+    border-top: 6px solid var(--ok);
+    animation: sucessoPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  @keyframes sucessoPop {
+    0% {
+      opacity: 0;
+      transform: scale(0.7) translateY(40px);
+    }
+    70% {
+      transform: scale(1.04) translateY(-8px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Animação no Erro: tremor pedagógico (shake suave) */
+  .modal.erro {
+    border-top: 6px solid var(--erro);
+    animation: erroShake 0.45s ease-in-out forwards;
+  }
+
+  @keyframes erroShake {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+    }
+    30% {
+      opacity: 1;
+      transform: scale(1) translateX(-12px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    70% {
+      transform: translateX(-6px);
+    }
+    90% {
+      transform: translateX(3px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateX(0);
+    }
+  }
+
+  /* Ícones com animações personalizadas */
+  .modal-icone {
+    font-size: 64px;
     font-weight: 700;
+    line-height: 1;
+    margin-bottom: 12px;
+    display: inline-block;
   }
 
-  .feedback.sucesso .feedback-icone {
+  .icone-acerto {
+    color: var(--ok);
+    display: inline-block;
+    animation: bounceRotate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+  }
+
+  @keyframes bounceRotate {
+    0% {
+      opacity: 0;
+      transform: scale(0) rotate(-120deg);
+    }
+    60% {
+      transform: scale(1.3) rotate(15deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0);
+    }
+  }
+
+  .icone-erro {
+    color: var(--erro);
+    display: inline-block;
+    animation: dropSway 0.5s ease-out 0.1s both;
+  }
+
+  @keyframes dropSway {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.8);
+    }
+    50% {
+      transform: translateY(6px) scale(1.1);
+    }
+    75% {
+      transform: translateY(-3px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .modal-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+
+  .modal.sucesso .modal-titulo {
     color: var(--ok);
   }
 
-  .feedback.erro .feedback-icone {
+  .modal.erro .modal-titulo {
     color: var(--erro);
   }
 
-  .feedback-titulo {
-    font-size: 18px;
+  .modal-xp {
+    display: inline-block;
+    font-size: 15px;
     font-weight: 700;
-    flex: 1;
-  }
-
-  .feedback-xp {
-    font-size: 14px;
-    font-weight: 700;
-    padding: 4px 8px;
+    padding: 6px 16px;
     background: var(--ink);
     color: var(--paper);
     border-radius: var(--raio-botao);
+    margin-bottom: 16px;
+    animation: xpPop 0.5s ease-out 0.25s both;
   }
 
-  .feedback-mensagem {
+  @keyframes xpPop {
+    0% { opacity: 0; transform: scale(0.7); }
+    70% { transform: scale(1.15); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  .modal-mensagem {
     font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    opacity: 0.9;
+    margin-bottom: 20px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.02);
+    padding: 12px 16px;
+    border-radius: var(--raio-botao);
+    border: 1px solid var(--rule);
   }
 
-  .feedback-fonte {
+  .modal-fonte {
     font-size: 12px;
-    opacity: 0.8;
-    margin-bottom: 16px;
-    padding-top: 12px;
-    border-top: 1px solid var(--rule);
+    opacity: 0.7;
+    margin-bottom: 24px;
+    text-align: left;
   }
 
-  .feedback-fonte .rotulo {
+  .modal-fonte .rotulo {
     display: block;
     margin-bottom: 2px;
+    font-weight: 600;
   }
 
-  .feedback-acoes {
+  .modal-acoes {
     display: flex;
+    flex-direction: column;
     gap: 12px;
   }
 
   .botao-tentar,
   .botao-proxima {
     width: 100%;
-    min-height: 44px;
+    min-height: 48px;
     border: none;
     border-radius: var(--raio-botao);
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+    transition: transform 0.1s, opacity 0.1s;
+  }
+
+  .botao-tentar:active,
+  .botao-proxima:active {
+    transform: scale(0.98);
   }
 
   .botao-tentar {
@@ -412,8 +584,46 @@
     color: var(--paper);
   }
 
-  .carregando {
-    text-align: center;
-    padding-top: 48px;
+  .botao-tentar:focus-visible,
+  .botao-proxima:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Partículas de celebração no acerto */
+  .particulas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .particula {
+    position: absolute;
+    font-size: 24px;
+    color: var(--accent);
+    animation: flutuar 1.2s ease-out forwards;
+    opacity: 0;
+  }
+
+  .p1 { left: 20%; top: 40%; color: var(--ok); animation-delay: 0.05s; font-size: 28px; }
+  .p2 { left: 35%; top: 30%; color: var(--accent); animation-delay: 0.15s; font-size: 22px; }
+  .p3 { left: 65%; top: 35%; color: var(--tema-bullying); animation-delay: 0.1s; font-size: 18px; }
+  .p4 { left: 80%; top: 45%; color: var(--ok); animation-delay: 0.2s; font-size: 26px; }
+  .p5 { left: 25%; top: 60%; color: var(--tema-racismo); animation-delay: 0.25s; font-size: 20px; }
+  .p6 { left: 75%; top: 65%; color: var(--accent); animation-delay: 0.18s; font-size: 22px; }
+
+  @keyframes flutuar {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.5) rotate(0deg);
+    }
+    40% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-80px) scale(1.2) rotate(180deg);
+    }
   }
 </style>
