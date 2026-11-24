@@ -209,7 +209,7 @@
     border: none;
     background: transparent;
     font-size: 24px;
-    color: var(--ink);
+    color: var(--text-primary);
     cursor: pointer;
     border-radius: var(--raio-botao);
   }
@@ -246,113 +246,132 @@
   }
 
   .objetivo {
-    margin-bottom: 16px;
-    padding: 8px 12px;
-    background: var(--rule);
+    margin-bottom: var(--esp-5);
+    padding: var(--esp-3) var(--esp-4);
+    background: var(--bg-secondary);
     border-radius: var(--raio-botao);
-    font-size: 13px;
+    font-size: var(--texto-sm);
+    color: var(--text-secondary);
   }
 
   .objetivo p {
-    margin: 4px 0 0;
+    margin: var(--esp-1) 0 0;
+    color: var(--text-primary);
   }
 
   .enunciado {
-    font-size: 20px;
+    font-size: var(--texto-lg);
     line-height: 1.4;
-    margin-bottom: 24px;
+    margin-bottom: var(--esp-8);
   }
 
   .alternativas {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: var(--esp-4);
+    margin-bottom: var(--esp-6);
   }
 
   .opcao {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    padding: 16px;
-    background: var(--paper);
+    gap: var(--esp-3);
+    padding: var(--esp-5);
+    background: var(--bg-secondary);
     border: 2px solid var(--rule);
     border-radius: var(--raio);
     text-align: left;
-    color: var(--ink);
+    color: var(--text-primary);
     cursor: pointer;
-    min-height: 44px;
-    transition: border-color 0.15s, background 0.15s;
+    min-height: var(--alvo-acao);
+    box-shadow: 0 4px 0 var(--rule);
+    transition: border-color var(--dur-rapida), transform var(--dur-rapida), box-shadow var(--dur-rapida), background var(--dur-rapida);
   }
 
   .opcao:hover:not(:disabled),
   .opcao:focus-visible:not(:disabled) {
-    border-color: var(--accent);
+    border-color: var(--color-primary-strong);
+  }
+
+  .opcao:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--rule);
   }
 
   .opcao.selecionada {
-    border-color: var(--accent);
-    background: rgba(166, 61, 0, 0.05);
+    border-color: var(--color-primary-strong);
+    background: var(--bg-secondary);
+    box-shadow: 0 4px 0 var(--color-primary-shadow);
   }
 
   .opcao.correta {
-    border-color: var(--ok);
-    background: rgba(47, 107, 79, 0.1);
+    border-color: var(--color-success-strong);
+    background: var(--bg-secondary);
+    box-shadow: 0 4px 0 var(--color-success-shadow);
   }
 
   .opcao.incorreta {
-    border-color: var(--erro);
-    background: rgba(181, 52, 43, 0.1);
+    border-color: var(--color-error-strong);
+    background: var(--bg-secondary);
+    box-shadow: 0 4px 0 var(--color-error-shadow);
   }
 
   .opcao-letra {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
     background: var(--rule);
-    font-size: 14px;
+    color: var(--text-primary);
+    font-size: var(--texto-sm);
     font-weight: 700;
     flex-shrink: 0;
   }
 
   .opcao.selecionada .opcao-letra {
-    background: var(--accent);
-    color: var(--paper);
+    background: var(--color-primary);
+    color: var(--text-on-color);
   }
 
   .opcao.correta .opcao-letra {
-    background: var(--ok);
-    color: var(--paper);
+    background: var(--color-success);
+    color: var(--text-on-color);
   }
 
   .opcao.incorreta .opcao-letra {
-    background: var(--erro);
-    color: var(--paper);
+    background: var(--color-error);
+    color: var(--text-on-color);
   }
 
   .opcao-texto {
-    font-size: 16px;
+    font-size: var(--texto-base);
     line-height: 1.4;
-    padding-top: 2px;
+    padding-top: 3px;
   }
 
   .botao-confirmar {
     width: 100%;
-    min-height: 48px;
-    background: var(--accent);
-    color: var(--paper);
+    min-height: var(--alvo-acao);
+    background: var(--color-primary);
+    color: var(--text-on-color);
     border: none;
     border-radius: var(--raio-botao);
-    font-size: 16px;
-    font-weight: 600;
+    font-size: var(--texto-base);
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 5px 0 var(--color-primary-shadow);
+  }
+
+  .botao-confirmar:not(:disabled):active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 var(--color-primary-shadow);
   }
 
   .botao-confirmar:disabled {
     opacity: 0.5;
+    box-shadow: 0 3px 0 var(--color-primary-shadow);
     cursor: not-allowed;
   }
 
@@ -365,7 +384,7 @@
   .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(27, 24, 21, 0.75);
+    background: rgba(19, 31, 36, 0.72);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -380,81 +399,66 @@
     to { opacity: 1; }
   }
 
-  /* Modal genérico */
   .modal {
     width: 100%;
     max-width: 440px;
-    background: var(--paper);
-    border-radius: var(--raio);
-    padding: 32px 24px;
+    background: var(--bg-primary);
+    border: 2px solid var(--rule);
+    border-radius: var(--raio-cards);
+    padding: var(--esp-8) var(--esp-6);
     text-align: center;
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 0 rgba(0, 0, 0, 0.18), 0 24px 48px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
   }
 
-  /* Animação no Acerto: pop saltitante e luminoso */
+  /* Acerto: pop elástico com selo de conquista */
   .modal.sucesso {
-    border-top: 6px solid var(--ok);
-    animation: sucessoPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    border-top: 6px solid var(--color-success);
+    animation: sucessoPop 0.5s var(--easing-pop) forwards;
   }
 
   @keyframes sucessoPop {
-    0% {
-      opacity: 0;
-      transform: scale(0.7) translateY(40px);
-    }
-    70% {
-      transform: scale(1.04) translateY(-8px);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
+    0% { opacity: 0; transform: scale(0.7) translateY(40px); }
+    70% { transform: scale(1.04) translateY(-8px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
   }
 
-  /* Animação no Erro: tremor pedagógico (shake suave) */
+  /* Erro: tremor suave não punitivo */
   .modal.erro {
-    border-top: 6px solid var(--erro);
+    border-top: 6px solid var(--color-error);
     animation: erroShake 0.45s ease-in-out forwards;
   }
 
   @keyframes erroShake {
-    0% {
-      opacity: 0;
-      transform: scale(0.9) translateY(20px);
-    }
-    30% {
-      opacity: 1;
-      transform: scale(1) translateX(-12px);
-    }
-    50% {
-      transform: translateX(10px);
-    }
-    70% {
-      transform: translateX(-6px);
-    }
-    90% {
-      transform: translateX(3px);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1) translateX(0);
-    }
+    0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+    30% { opacity: 1; transform: scale(1) translateX(-12px); }
+    50% { transform: translateX(10px); }
+    70% { transform: translateX(-6px); }
+    90% { transform: translateX(3px); }
+    100% { opacity: 1; transform: scale(1) translateX(0); }
   }
 
   .modal-icone {
-    display: inline-block;
-    line-height: 0;
-    margin-bottom: var(--esp-3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    border-radius: 28px;
+    margin-bottom: var(--esp-5);
   }
 
   .modal.sucesso .modal-icone {
-    color: var(--ok);
+    color: var(--text-on-color);
+    background: var(--color-success);
+    box-shadow: 0 5px 0 var(--color-success-shadow);
   }
 
   .modal.erro .modal-icone {
-    color: var(--erro);
+    color: var(--text-on-color);
+    background: var(--color-error);
+    box-shadow: 0 5px 0 var(--color-error-shadow);
   }
 
   .modal.sucesso .modal-icone :global(svg) {
@@ -466,29 +470,29 @@
   }
 
   .modal-titulo {
-    font-size: 24px;
+    font-size: var(--texto-xl);
     font-weight: 700;
-    margin: 0 0 8px;
-    color: var(--ink);
+    margin: 0 0 var(--esp-2);
   }
 
   .modal.sucesso .modal-titulo {
-    color: var(--ok);
+    color: var(--color-success-strong);
   }
 
   .modal.erro .modal-titulo {
-    color: var(--erro);
+    color: var(--color-error-strong);
   }
 
   .modal-xp {
     display: inline-block;
-    font-size: 15px;
+    font-size: var(--texto-sm);
     font-weight: 700;
-    padding: 6px 16px;
-    background: var(--ink);
-    color: var(--paper);
-    border-radius: var(--raio-botao);
-    margin-bottom: 16px;
+    padding: var(--esp-2) var(--esp-4);
+    background: var(--color-secondary);
+    color: var(--text-on-color);
+    border-radius: var(--raio-pill);
+    margin-bottom: var(--esp-4);
+    box-shadow: 0 3px 0 var(--color-secondary-shadow);
     animation: xpPop 0.5s ease-out 0.25s both;
   }
 
@@ -499,67 +503,66 @@
   }
 
   .modal-mensagem {
-    font-size: 15px;
+    font-size: var(--texto-base);
     line-height: 1.6;
-    color: var(--ink);
-    opacity: 0.9;
-    margin-bottom: 20px;
+    color: var(--text-primary);
+    margin-bottom: var(--esp-5);
     text-align: left;
-    background: rgba(0, 0, 0, 0.02);
-    padding: 12px 16px;
+    background: var(--bg-secondary);
+    padding: var(--esp-4);
     border-radius: var(--raio-botao);
     border: 1px solid var(--rule);
   }
 
   .modal-fonte {
-    font-size: 12px;
-    opacity: 0.7;
-    margin-bottom: 24px;
+    font-size: var(--texto-xs);
+    color: var(--text-secondary);
+    margin-bottom: var(--esp-6);
     text-align: left;
   }
 
   .modal-fonte .rotulo {
     display: block;
-    margin-bottom: 2px;
-    font-weight: 600;
+    margin-bottom: var(--esp-1);
   }
 
   .modal-acoes {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--esp-3);
   }
 
   .botao-tentar,
   .botao-proxima {
     width: 100%;
-    min-height: 48px;
+    min-height: var(--alvo-acao);
     border: none;
     border-radius: var(--raio-botao);
-    font-size: 16px;
-    font-weight: 600;
+    font-size: var(--texto-base);
+    font-weight: 700;
     cursor: pointer;
-    transition: transform 0.1s, opacity 0.1s;
-  }
-
-  .botao-tentar:active,
-  .botao-proxima:active {
-    transform: scale(0.98);
+    transition: transform 0.1s, box-shadow 0.1s;
   }
 
   .botao-tentar {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--rule);
+    box-shadow: 0 4px 0 var(--rule);
   }
 
   .botao-proxima {
-    background: var(--ok);
-    color: var(--paper);
+    background: var(--color-success);
+    color: var(--text-on-color);
+    box-shadow: 0 5px 0 var(--color-success-shadow);
   }
+
+  .botao-tentar:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--rule); }
+  .botao-proxima:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--color-success-shadow); }
 
   .botao-tentar:focus-visible,
   .botao-proxima:focus-visible {
-    outline: 3px solid var(--accent);
+    outline: 3px solid var(--color-primary-strong);
     outline-offset: 2px;
   }
 
@@ -574,17 +577,17 @@
   .particula {
     position: absolute;
     font-size: 24px;
-    color: var(--accent);
+    color: var(--color-primary-strong);
     animation: flutuar 1.2s ease-out forwards;
     opacity: 0;
   }
 
-  .p1 { left: 20%; top: 40%; color: var(--ok); animation-delay: 0.05s; font-size: 28px; }
-  .p2 { left: 35%; top: 30%; color: var(--accent); animation-delay: 0.15s; font-size: 22px; }
-  .p3 { left: 65%; top: 35%; color: var(--tema-bullying); animation-delay: 0.1s; font-size: 18px; }
-  .p4 { left: 80%; top: 45%; color: var(--ok); animation-delay: 0.2s; font-size: 26px; }
+  .p1 { left: 20%; top: 40%; color: var(--color-success); animation-delay: 0.05s; font-size: 28px; }
+  .p2 { left: 35%; top: 30%; color: var(--color-secondary); animation-delay: 0.15s; font-size: 22px; }
+  .p3 { left: 65%; top: 35%; color: var(--color-primary); animation-delay: 0.1s; font-size: 18px; }
+  .p4 { left: 80%; top: 45%; color: var(--color-success); animation-delay: 0.2s; font-size: 26px; }
   .p5 { left: 25%; top: 60%; color: var(--tema-racismo); animation-delay: 0.25s; font-size: 20px; }
-  .p6 { left: 75%; top: 65%; color: var(--accent); animation-delay: 0.18s; font-size: 22px; }
+  .p6 { left: 75%; top: 65%; color: var(--color-secondary); animation-delay: 0.18s; font-size: 22px; }
 
   @keyframes flutuar {
     0% {

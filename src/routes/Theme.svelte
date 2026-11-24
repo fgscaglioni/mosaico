@@ -61,7 +61,7 @@
     border: none;
     background: transparent;
     line-height: 0;
-    color: var(--ink);
+    color: var(--text-primary);
     cursor: pointer;
     border-radius: var(--raio-botao);
   }
@@ -80,67 +80,76 @@
   .tela-temas {
     max-width: 600px;
     margin: 0 auto;
-    padding: 0 var(--esp-4) var(--esp-6);
+    padding: 0 var(--esp-4) var(--esp-8);
   }
 
   .subtitulo {
     text-align: center;
-    opacity: 0.7;
-    margin-bottom: var(--esp-5);
+    color: var(--text-secondary);
+    margin-bottom: var(--esp-8);
   }
 
   .grade-temas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--esp-3);
+    gap: var(--esp-4);
   }
 
   .tema-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--esp-2);
-    padding: var(--esp-5) var(--esp-4);
-    background: var(--paper);
+    gap: var(--esp-3);
+    padding: var(--esp-6) var(--esp-5);
+    background: var(--bg-secondary);
     border: 2px solid var(--rule);
-    border-radius: var(--raio);
-    min-height: 140px;
+    border-radius: var(--raio-cards);
+    min-height: 160px;
     min-width: 0;
-    color: var(--ink);
-    transition: border-color var(--dur-rapida), transform var(--dur-rapida);
+    color: var(--text-primary);
+    box-shadow: 0 5px 0 var(--rule);
+    transition: border-color var(--dur-rapida), transform var(--dur-rapida), box-shadow var(--dur-rapida);
   }
 
   .tema-card:hover,
   .tema-card:focus-visible {
     border-color: var(--tema-cor);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 var(--rule);
+  }
+
+  .tema-card:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 var(--rule);
   }
 
   .tema-cor {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border-radius: 22px;
     background: var(--tema-cor);
-    color: var(--branco);
+    color: var(--text-on-color);
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.16);
   }
 
   .tema-nome {
     font-weight: 700;
     font-size: var(--texto-md);
+    color: var(--text-primary);
   }
 
   .tema-qtd {
     font-size: var(--texto-sm);
-    opacity: 0.7;
+    color: var(--text-secondary);
   }
 
   .tema-progresso {
     font-size: var(--texto-xs);
     font-weight: 700;
-    color: var(--tema-cor);
+    color: var(--text-secondary);
     text-align: center;
   }
 </style>

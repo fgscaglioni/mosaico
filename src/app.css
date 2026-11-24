@@ -1,22 +1,38 @@
 :root {
-  /* Base */
-  --paper: #FBF7EE;
-  --ink: #1B1815;
-  --rule: #D9D2C7;
-  --branco: #FFFFFF;
+  /* Superfícies (light) */
+  --bg-primary: #FDFBF7;
+  --bg-secondary: #F3EFE6;
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --rule: #D9D4C7;
 
-  /* Ação */
-  --accent: #4338CA;
+  /* Ação — turquesa: nervosismo e confiança */
+  --color-primary: #00A8E8;
+  --color-primary-shadow: #007EA7;
+  --color-primary-strong: #006B8E; /* variante AA para texto sobre claro */
 
-  /* Feedback */
-  --ok: #166534;
-  --erro: #B91C1C;
+  /* Destaque — âmbar: urgência positiva */
+  --color-secondary: #FF9F1C;
+  --color-secondary-shadow: #CC7A00;
+  --color-secondary-strong: #8A5A00;
 
-  /* Temas — cores distintas entre si e do feedback */
-  --tema-bullying: #C2410C;
-  --tema-racismo: #6D28D9;
-  --tema-xenofobia: #0369A1;
-  --tema-genero: #BE185D;
+  /* Feedback não punitivo */
+  --color-success: #2EC4B6;
+  --color-success-shadow: #208B81;
+  --color-success-strong: #15756B;
+
+  --color-error: #E76F51;
+  --color-error-shadow: #B54D32;
+  --color-error-strong: #9C4028;
+
+  /* Temas — cores saturadas distintas entre si e do feedback */
+  --tema-bullying: #F472B6;
+  --tema-racismo: #7B4DB8;
+  --tema-xenofobia: #4FC3F7;
+  --tema-genero: #E85D9E;
+
+  /* Texto sobre qualquer cor saturada */
+  --text-on-color: #1E293B;
 
   /* Tipografia */
   --fonte-corpo: "Avenir Next", "Segoe UI", Roboto, "Trebuchet MS", system-ui, sans-serif;
@@ -30,19 +46,25 @@
   --texto-2xl: 1.67rem;
   --texto-3xl: 2.7rem;
 
-  /* Formas e espaço */
+  /* Geometria squircle + profundidade 2.5D */
+  --raio-cards: 24px;
   --raio: 20px;
-  --raio-botao: 16px;
+  --raio-botao: 14px;
   --raio-pill: 999px;
+  --sombra-2d: 0 4px 0 var(--color-primary-shadow);
+  --sombra-2d-forte: 0 5px 0 var(--color-primary-shadow);
+
+  /* Espaço — respiro cognitivo */
   --esp-1: 4px;
   --esp-2: 8px;
   --esp-3: 12px;
   --esp-4: 16px;
   --esp-5: 24px;
   --esp-6: 32px;
-  --esp-7: 48px;
-  --esp-8: 64px;
+  --esp-7: 40px;
+  --esp-8: 48px;
   --alvo-toque: 44px;
+  --alvo-acao: 52px;
 
   /* Movimento */
   --dur-rapida: 0.15s;
@@ -51,9 +73,27 @@
   --easing-suave: ease-out;
 }
 
-* {
-  box-sizing: border-box;
+[data-theme="dark"] {
+  --bg-primary: #131F24;
+  --bg-secondary: #1D2D35;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --rule: #334552;
+
+  --color-primary-strong: #00A8E8;
+  --color-secondary-strong: #FF9F1C;
+  --color-success-strong: #2EC4B6;
+  --color-error-strong: #E76F51;
+
+  --tema-bullying: #F08E72;
+  --tema-racismo: #A97CE0;
+  --tema-xenofobia: #4FC3F7;
+  --tema-genero: #F286BD;
+
+  --text-on-color: #0B1519;
 }
+
+* { box-sizing: border-box; }
 
 html {
   font-size: 18px;
@@ -61,39 +101,32 @@ html {
   font-family: var(--fonte-corpo);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: light;
 }
+
+[data-theme="dark"] html, html[data-theme="dark"] { color-scheme: dark; }
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   min-height: 100vh;
+  transition: background var(--dur-normal) var(--easing-suave), color var(--dur-normal) var(--easing-suave);
 }
 
 h1, h2 {
   font-family: var(--fonte-titulo);
   font-weight: 700;
+  color: var(--text-primary);
 }
 
-h1 {
-  font-size: var(--texto-2xl);
-  line-height: 1.2;
-  margin: 0 0 var(--esp-4);
-}
-
-h2 {
-  font-size: var(--texto-lg);
-  line-height: 1.3;
-  margin: 0 0 var(--esp-3);
-}
+h1 { font-size: var(--texto-2xl); line-height: 1.2; margin: 0 0 var(--esp-4); }
+h2 { font-size: var(--texto-lg); line-height: 1.3; margin: 0 0 var(--esp-3); }
 
 label, .rotulo {
-  font-size: var(--texto-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: var(--texto-sm);
   font-weight: 700;
-  color: var(--ink);
-  opacity: 0.7;
+  color: var(--text-secondary);
 }
 
 button, a[role="button"] {
@@ -104,12 +137,12 @@ button, a[role="button"] {
   font-weight: 700;
   cursor: pointer;
   border: none;
-  transition: background var(--dur-rapida), opacity var(--dur-rapida);
+  transition: background var(--dur-rapida), transform var(--dur-rapida), box-shadow var(--dur-rapida), opacity var(--dur-rapida);
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 2px;
+  outline: 3px solid var(--color-primary-strong);
+  outline-offset: 3px;
 }
 
 input, select, textarea {
@@ -117,24 +150,38 @@ input, select, textarea {
   padding: var(--esp-3) var(--esp-4);
   border: 2px solid var(--rule);
   border-radius: var(--raio-botao);
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   min-height: var(--alvo-toque);
 }
 
 input:focus, select:focus, textarea:focus {
-  border-color: var(--accent);
+  border-color: var(--color-primary-strong);
   outline: none;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
+a { color: var(--color-primary-strong); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Superfície elevada e botão tátil 2.5D, reutilizáveis */
+.superficie {
+  background: var(--bg-secondary);
+  border: 2px solid var(--rule);
+  border-radius: var(--raio);
 }
 
-a:hover {
-  text-decoration: underline;
+.tatil {
+  box-shadow: 0 4px 0 var(--color-primary-shadow);
+  transform: translateY(0);
 }
+
+.tatil:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--color-primary-shadow);
+}
+
+.tatil-sucesso { box-shadow: 0 4px 0 var(--color-success-shadow); }
+.tatil-sucesso:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-success-shadow); }
 
 .sr-only {
   position: absolute;
@@ -148,6 +195,8 @@ a:hover {
   border: 0;
 }
 
-[aria-live="polite"] {
-  min-height: 24px;
+[aria-live="polite"] { min-height: 24px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tatil, .tatil-sucesso, body { transform: none; transition: none; }
 }

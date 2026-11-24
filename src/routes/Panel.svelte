@@ -127,7 +127,7 @@
     border: none;
     background: transparent;
     font-size: 24px;
-    color: var(--ink);
+    color: var(--text-primary);
     cursor: pointer;
     border-radius: var(--raio-botao);
   }
@@ -158,11 +158,11 @@
 
   .erro {
     background: rgba(181, 52, 43, 0.1);
-    border: 2px solid var(--erro);
+    border: 2px solid var(--color-error);
     border-radius: var(--raio);
     padding: 24px;
     text-align: center;
-    color: var(--erro);
+    color: var(--color-error);
   }
 
   .erro-detalhe {
@@ -182,7 +182,7 @@
   }
 
   .metrica {
-    background: var(--paper);
+    background: var(--bg-primary);
     border: 2px solid var(--rule);
     border-radius: var(--raio-botao);
     padding: 20px;
@@ -218,7 +218,7 @@
   }
 
   .tema-progresso-card {
-    background: var(--paper);
+    background: var(--bg-primary);
     border: 2px solid var(--rule);
     border-radius: var(--raio-botao);
     padding: 16px;

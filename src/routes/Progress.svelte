@@ -112,7 +112,7 @@
     border: none;
     background: transparent;
     font-size: 24px;
-    color: var(--ink);
+    color: var(--text-primary);
     cursor: pointer;
     border-radius: var(--raio-botao);
   }
@@ -136,8 +136,8 @@
   }
 
   .card-nivel {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--text-primary);
+    color: var(--bg-primary);
     border-radius: var(--raio);
     padding: 24px;
     text-align: center;
@@ -162,7 +162,7 @@
 
   .barra-preenchimento {
     height: 100%;
-    background: var(--accent);
+    background: var(--color-primary);
     transition: width 0.3s;
   }
 
@@ -179,7 +179,7 @@
   }
 
   .metrica {
-    background: var(--paper);
+    background: var(--bg-primary);
     border: 2px solid var(--rule);
     border-radius: var(--raio-botao);
     padding: 16px;
@@ -210,7 +210,7 @@
   }
 
   .tema-progresso-card {
-    background: var(--paper);
+    background: var(--bg-primary);
     border: 2px solid var(--rule);
     border-radius: var(--raio-botao);
     padding: 16px;
@@ -268,7 +268,7 @@
   }
 
   .badge-card {
-    background: var(--paper);
+    background: var(--bg-primary);
     border: 2px dashed var(--rule);
     border-radius: var(--raio-botao);
     padding: 16px;
@@ -278,7 +278,7 @@
 
   .badge-card.conquistada {
     border-style: solid;
-    border-color: var(--accent);
+    border-color: var(--color-primary);
     opacity: 1;
     background: rgba(166, 61, 0, 0.05);
   }
@@ -287,7 +287,7 @@
     font-size: 24px;
     display: block;
     margin-bottom: 4px;
-    color: var(--accent);
+    color: var(--color-primary);
   }
 
   .badge-nome {

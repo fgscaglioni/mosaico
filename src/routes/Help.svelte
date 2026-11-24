@@ -71,7 +71,7 @@
     border: none;
     background: transparent;
     font-size: 24px;
-    color: var(--ink);
+    color: var(--text-primary);
     cursor: pointer;
     border-radius: var(--raio-botao);
   }
@@ -98,8 +98,8 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--text-primary);
+    color: var(--bg-primary);
     padding: 20px;
     border-radius: var(--raio);
     margin-bottom: 24px;
@@ -134,7 +134,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    background: var(--paper);
+    background: var(--bg-primary);
     border: 2px solid var(--rule);
     border-radius: var(--raio-botao);
     padding: 16px;
@@ -164,8 +164,8 @@
     gap: 8px;
     min-height: 44px;
     padding: 8px 16px;
-    background: var(--accent);
-    color: var(--paper);
+    background: var(--color-primary);
+    color: var(--bg-primary);
     border-radius: var(--raio-botao);
     font-weight: 700;
     font-size: 18px;
@@ -185,7 +185,7 @@
     padding: 8px 12px;
     background: var(--rule);
     border-radius: var(--raio-botao);
-    color: var(--ink);
+    color: var(--text-primary);
     text-align: center;
   }
 

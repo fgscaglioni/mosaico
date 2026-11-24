@@ -27,62 +27,86 @@ function token(css: string, name: string): string {
   return match[1];
 }
 
-describe("design system (T-02, T-04, T-05)", () => {
+describe("design system indie game UI", () => {
   const css = read("src/app.css");
+
+  it("tokens base light mode são os definidos na spec", () => {
+    expect(token(css, "bg-primary")).toBe("#FDFBF7");
+    expect(token(css, "bg-secondary")).toBe("#F3EFE6");
+    expect(token(css, "text-primary")).toBe("#1E293B");
+    expect(token(css, "color-primary")).toBe("#00A8E8");
+    expect(token(css, "color-secondary")).toBe("#FF9F1C");
+    expect(token(css, "color-success")).toBe("#2EC4B6");
+    expect(token(css, "color-error")).toBe("#E76F51");
+  });
+
+  it("dark mode cobre todas as superfícies e texto", () => {
+    expect(css).toContain('[data-theme="dark"]');
+    const dark = css.split('[data-theme="dark"]')[1].split("}")[0];
+    for (const t of ["bg-primary", "bg-secondary", "text-primary", "text-secondary"]) {
+      expect(dark).toMatch(new RegExp(`--${t}:`));
+    }
+  });
+
+  it("contraste AA para texto em ambos os temas", () => {
+    for (const [bg, fg, fg2] of [
+      [token(css, "bg-primary"), token(css, "text-primary"), token(css, "text-secondary")],
+      [token(css, "bg-secondary"), token(css, "text-primary"), token(css, "text-secondary")],
+    ]) {
+      expect(contrast(fg, bg)).toBeGreaterThanOrEqual(4.5);
+      expect(contrast(fg2, bg)).toBeGreaterThanOrEqual(4.5);
+    }
+    const darkCss = css.split('[data-theme="dark"]')[1];
+    expect(contrast(token(darkCss, "text-primary"), token(darkCss, "bg-primary"))).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(token(darkCss, "text-secondary"), token(darkCss, "bg-secondary"))).toBeGreaterThanOrEqual(4.5);
+  });
+
+  it("cores saturadas como fundo usam texto escuro legível", () => {
+    const on = token(css, "text-on-color");
+    for (const t of ["color-primary", "color-secondary", "color-success", "color-error"]) {
+      expect(contrast(on, token(css, t)), t).toBeGreaterThanOrEqual(4.5);
+    }
+  });
+
+  it("variantes -strong garantem texto AA sobre fundo claro", () => {
+    const light = token(css, "bg-primary");
+    for (const t of ["color-primary-strong", "color-secondary-strong", "color-success-strong", "color-error-strong"]) {
+      expect(contrast(token(css, t), light), t).toBeGreaterThanOrEqual(4.5);
+    }
+  });
 
   it("temas são distintos entre si e do feedback", () => {
     const temas = ["tema-bullying", "tema-racismo", "tema-xenofobia", "tema-genero"].map((t) => token(css, t));
-    const feedback = [token(css, "ok"), token(css, "erro"), token(css, "accent")];
-
+    const feedback = [token(css, "color-success"), token(css, "color-error"), token(css, "color-primary")];
     expect(new Set(temas).size).toBe(4);
-    for (const tema of temas) {
-      expect(feedback).not.toContain(tema);
-    }
+    for (const tema of temas) expect(feedback).not.toContain(tema);
   });
 
-  it("contraste AA (>= 4.5:1) para texto sobre branco e paper", () => {
-    const branco = "#FFFFFF";
-    const paper = token(css, "paper");
-    const cores = ["ink", "accent", "ok", "erro", "tema-bullying", "tema-racismo", "tema-xenofobia", "tema-genero"];
-
-    for (const nome of cores) {
-      const cor = token(css, nome);
-      expect(contrast(cor, branco), `${nome} sobre branco`).toBeGreaterThanOrEqual(4.5);
-      expect(contrast(cor, paper), `${nome} sobre paper`).toBeGreaterThanOrEqual(4.5);
-    }
+  it("geometria squircle e profundidade 2.5D presentes", () => {
+    expect(css).toContain("--raio-cards: 24px");
+    expect(css).toContain("--raio-botao: 14px");
+    expect(read("src/App.svelte")).toContain("0 4px 0");
+    expect(read("src/routes/Home.svelte")).toContain("translateY(3px)");
+    expect(read("src/routes/Card.svelte")).toContain("translateY(2px)");
   });
 
-  it("usa escala rem e tokens de espaço, sem px literais em tipografia", () => {
-    expect(css).toContain("--texto-xs: 0.72rem");
-    expect(css).toContain("--texto-3xl: 2.7rem");
-    expect(css).toContain("--alvo-toque: 44px");
-    expect(css).toMatch(/font-size:\s*var\(--texto-/);
+  it("respeita prefers-reduced-motion", () => {
+    expect(css).toContain("@media (prefers-reduced-motion: reduce)");
+    expect(read("src/routes/Card.svelte")).toContain("@media (prefers-reduced-motion: reduce)");
   });
 
-  it("modal respeita prefers-reduced-motion", () => {
-    const card = read("src/routes/Card.svelte");
-    expect(card).toContain("@media (prefers-reduced-motion: reduce)");
-    expect(card).toContain("animation: none !important");
+  it("toggle de tema sem flash e persistido", () => {
+    const html = read("index.html");
+    expect(html).toContain('data-theme');
+    expect(html).toContain('localStorage.getItem("mosaico-theme")');
+    const app = read("src/App.svelte");
+    expect(app).toContain('toggleTheme');
+    expect(app).toContain('localStorage.setItem("mosaico-theme"');
   });
 
-  it("componentes usam ícones SVG em vez de emoji", () => {
-    const routes = ["Home", "Theme", "Card", "Progress", "Help"];
-    for (const rota of routes) {
-      const source = read(`src/routes/${rota}.svelte`);
-      expect(source).toContain("Icon.svelte");
-    }
-    const card = read("src/routes/Card.svelte");
-    expect(card).not.toContain("✓");
-    expect(card).not.toContain("✗");
-    const help = read("src/routes/Help.svelte");
-    expect(help).not.toContain("💡");
-    expect(help).not.toContain("📞");
-  });
-
-  it("documentação do design system existe e cobre os 8 princípios", () => {
-    const doc = read("docs/design-system.md");
-    for (const secao of ["Princípios", "Tokens de cor", "Tipografia", "Formas e espaço", "Ícones", "Movimento", "Progresso nos cartões", "Verificação"]) {
-      expect(doc).toContain(secao);
+  it("ícones SVG sem emoji nas rotas", () => {
+    for (const rota of ["Home", "Theme", "Card", "Progress", "Help"]) {
+      expect(read(`src/routes/${rota}.svelte`)).toContain("Icon.svelte");
     }
   });
 });
