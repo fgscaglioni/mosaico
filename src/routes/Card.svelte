@@ -3,6 +3,7 @@
   import { navigate } from "../lib/router.svelte";
   import { store, initStore, loadCard, recordAnswer, retry, clearFeedback } from "../lib/store.svelte";
   import { catalog } from "../lib/content";
+  import Icon from "../lib/Icon.svelte";
 
   let selectedOption = $state<number | null>(null);
   let feedbackVisible = $state(false);
@@ -75,7 +76,9 @@
 
 {#if store.currentCard}
   <header class="topo">
-    <button class="voltar" onclick={goBack} aria-label="Voltar aos temas">←</button>
+    <button class="voltar" onclick={goBack} aria-label="Voltar aos temas">
+    <Icon name="arrow-left" size={24} />
+  </button>
     <div class="tema-badge" style="--tema-cor: var(--tema-{store.currentCard.theme})">
       <span class="tema-ponto"></span>
       <span>{store.currentCard.theme}</span>
@@ -149,9 +152,9 @@
         <div class="modal-conteudo">
           <div class="modal-icone" aria-hidden="true">
             {#if feedbackType === "correct"}
-              <span class="icone-acerto">✓</span>
+              <Icon name="check" size={72} />
             {:else}
-              <span class="icone-erro">✗</span>
+              <Icon name="x" size={72} />
             {/if}
           </div>
 
@@ -440,56 +443,26 @@
     }
   }
 
-  /* Ícones com animações personalizadas */
   .modal-icone {
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 12px;
     display: inline-block;
+    line-height: 0;
+    margin-bottom: var(--esp-3);
   }
 
-  .icone-acerto {
+  .modal.sucesso .modal-icone {
     color: var(--ok);
-    display: inline-block;
-    animation: bounceRotate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
   }
 
-  @keyframes bounceRotate {
-    0% {
-      opacity: 0;
-      transform: scale(0) rotate(-120deg);
-    }
-    60% {
-      transform: scale(1.3) rotate(15deg);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1) rotate(0);
-    }
-  }
-
-  .icone-erro {
+  .modal.erro .modal-icone {
     color: var(--erro);
-    display: inline-block;
-    animation: dropSway 0.5s ease-out 0.1s both;
   }
 
-  @keyframes dropSway {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px) scale(0.8);
-    }
-    50% {
-      transform: translateY(6px) scale(1.1);
-    }
-    75% {
-      transform: translateY(-3px) scale(0.95);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+  .modal.sucesso .modal-icone :global(svg) {
+    animation: bounceRotate 0.6s var(--easing-pop) 0.1s both;
+  }
+
+  .modal.erro .modal-icone :global(svg) {
+    animation: dropSway 0.5s var(--easing-suave) 0.1s both;
   }
 
   .modal-titulo {
@@ -624,6 +597,41 @@
     100% {
       opacity: 0;
       transform: translateY(-80px) scale(1.2) rotate(180deg);
+    }
+  }
+
+  @keyframes bounceRotate {
+    0% { opacity: 0; transform: scale(0) rotate(-120deg); }
+    60% { transform: scale(1.3) rotate(15deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0); }
+  }
+
+  @keyframes dropSway {
+    0% { opacity: 0; transform: translateY(-20px) scale(0.8); }
+    50% { transform: translateY(6px) scale(1.1); }
+    75% { transform: translateY(-3px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* Respeito a quem prefere menos movimento */
+  @media (prefers-reduced-motion: reduce) {
+    .modal-overlay,
+    .modal.sucesso,
+    .modal.erro,
+    .modal-xp,
+    .particula,
+    .modal.sucesso .modal-icone :global(svg),
+    .modal.erro .modal-icone :global(svg) {
+      animation: none !important;
+    }
+
+    .particulas {
+      display: none;
+    }
+
+    .botao-tentar:active,
+    .botao-proxima:active {
+      transform: none;
     }
   }
 </style>

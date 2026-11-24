@@ -3,6 +3,7 @@
   import { navigate } from "../lib/router.svelte";
   import { initStore, recordHelpOpen } from "../lib/store.svelte";
   import { helpContent } from "../lib/content";
+  import Icon from "../lib/Icon.svelte";
 
   onMount(async () => {
     await initStore();
@@ -15,13 +16,15 @@
 </script>
 
 <header class="topo">
-  <button class="voltar" onclick={goBack} aria-label="Voltar ao início">←</button>
+  <button class="voltar" onclick={goBack} aria-label="Voltar ao início">
+    <Icon name="arrow-left" size={24} />
+  </button>
   <h1>Canais de Ajuda</h1>
 </header>
 
 <main class="tela-ajuda">
   <section class="dica-adulto" aria-label="Orientação principal">
-    <div class="dica-icone">💡</div>
+    <div class="dica-icone"><Icon name="help" size={40} /></div>
     <p class="dica-texto">{helpContent.adult_tip}</p>
   </section>
 
@@ -36,7 +39,7 @@
           </div>
           {#if channel.number}
             <a href="tel:{channel.number}" class="canal-numero" aria-label="Ligar para {channel.name} no número {channel.number}">
-              <span class="icone-tel">📞</span>
+              <Icon name="phone" size={18} />
               <span>{channel.number}</span>
             </a>
           {:else}
@@ -174,10 +177,6 @@
   .canal-numero:focus-visible {
     opacity: 0.9;
     text-decoration: none;
-  }
-
-  .icone-tel {
-    font-size: 14px;
   }
 
   .canal-sem-numero {

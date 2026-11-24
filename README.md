@@ -16,16 +16,21 @@ Entrega para o Hack Brasil 2026, trilha Acesso à educação.
 | Em que pé está a construção e qual é o próximo passo | [`docs/specs/STATE.md`](docs/specs/STATE.md) |
 | Como construir: scaffold, comandos, ordem, tokens | [`docs/specs/IMPLEMENTATION.md`](docs/specs/IMPLEMENTATION.md) |
 | Por que as decisões técnicas são essas | [`docs/decisions/`](docs/decisions/README.md) |
+| Como são cores, fontes, ícones e movimento | [`docs/design-system.md`](docs/design-system.md) |
+| Parecer do conselho sobre o design para crianças | [`docs/board/2026-11-24-design-system-criancas.md`](docs/board/2026-11-24-design-system-criancas.md) |
 
 ## Estrutura
 
 ```
 mosaico/
 ├── README.md
+├── Dockerfile
 └── docs/
     ├── specs/
     │   ├── PROJECT.md      # o que é, requisitos, política de conteúdo e de dados
     │   └── STATE.md        # fase atual, ambiente, bloqueios, próximo passo
+    ├── design-system.md    # cores, tipografia, formas, ícones e movimento
+    ├── board/              # atas do conselho de produto
     └── decisions/          # ADRs
 ```
 

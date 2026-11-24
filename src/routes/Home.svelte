@@ -3,6 +3,7 @@
   import { navigate } from "../lib/router.svelte";
   import { store, initStore, selectTheme, getBadgeInfo } from "../lib/store.svelte";
   import { catalog } from "../lib/content";
+  import Icon from "../lib/Icon.svelte";
 
   onMount(async () => {
     await initStore();
@@ -24,6 +25,8 @@
   function badgeLabel(id: string) {
     return getBadgeInfo(id as any)?.label ?? id;
   }
+
+  const temas = catalog.cards.filter((c, i, a) => a.findIndex(x => x.theme === c.theme) === i);
 </script>
 
 <header class="topo">
@@ -65,11 +68,16 @@
   <section class="temas" aria-label="Temas disponíveis">
     <h2>Escolha um tema</h2>
     <div class="grade-temas">
-      {#each catalog.cards.filter((c, i, a) => a.findIndex(x => x.theme === c.theme) === i) as tema}
+      {#each temas as tema}
+        {@const dados = store.progress.porTema[tema.theme] || { respostas: 0, acertos: 0, xp: 0 }}
+        {@const taxa = dados.respostas > 0 ? Math.round((dados.acertos / dados.respostas) * 100) : 0}
         <button class="tema-card" onclick={() => goTheme(tema.theme)}>
-          <span class="tema-cor" style="--tema-cor: var(--tema-{tema.theme})"></span>
+          <span class="tema-cor" style="--tema-cor: var(--tema-{tema.theme})">
+            <Icon name={tema.theme} size={28} />
+          </span>
           <span class="tema-nome">{tema.theme.charAt(0).toUpperCase() + tema.theme.slice(1)}</span>
           <span class="tema-qtd">5 cartas</span>
+          <span class="tema-progresso">{dados.respostas}/5 respondidas · {taxa}% de acertos</span>
         </button>
       {/each}
     </div>
@@ -83,39 +91,38 @@
 
 <style>
   .topo {
-    padding: 24px 16px 8px;
+    padding: var(--esp-5) var(--esp-4) var(--esp-2);
     text-align: center;
   }
 
   .topo h1 {
     margin: 0;
-    font-size: 30px;
   }
 
   .inicio {
     max-width: 600px;
     margin: 0 auto;
-    padding: 0 16px 32px;
+    padding: 0 var(--esp-4) var(--esp-6);
   }
 
   .progresso-resumo {
     background: var(--paper);
     border: 2px solid var(--rule);
     border-radius: var(--raio);
-    padding: 16px;
-    margin-bottom: 24px;
+    padding: var(--esp-4);
+    margin-bottom: var(--esp-5);
   }
 
   .metricas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: var(--esp-3);
+    margin-bottom: var(--esp-3);
   }
 
   .metrica {
     text-align: center;
-    padding: 12px;
+    padding: var(--esp-3);
     background: var(--ink);
     color: var(--paper);
     border-radius: var(--raio-botao);
@@ -123,56 +130,57 @@
 
   .metrica .rotulo {
     display: block;
-    font-size: 11px;
-    opacity: 0.8;
-    margin-bottom: 4px;
+    font-size: var(--texto-xs);
+    opacity: 0.85;
+    margin-bottom: var(--esp-1);
   }
 
   .metrica .valor {
-    font-size: 22px;
+    font-size: var(--texto-lg);
     font-weight: 700;
   }
 
   .medalhas {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--esp-2);
     justify-content: center;
   }
 
   .medalha {
-    font-size: 12px;
-    padding: 6px 12px;
+    font-size: var(--texto-xs);
+    padding: var(--esp-1) var(--esp-3);
     background: var(--accent);
-    color: var(--paper);
-    border-radius: 999px;
+    color: var(--branco);
+    border-radius: var(--raio-pill);
     white-space: nowrap;
   }
 
   .temas h2 {
-    margin-bottom: 16px;
+    margin-bottom: var(--esp-4);
     text-align: center;
   }
 
   .grade-temas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: var(--esp-3);
+    margin-bottom: var(--esp-5);
   }
 
   .tema-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    padding: 24px 16px;
+    gap: var(--esp-2);
+    padding: var(--esp-5) var(--esp-4);
     background: var(--paper);
     border: 2px solid var(--rule);
     border-radius: var(--raio);
-    min-height: 120px;
+    min-height: 140px;
     min-width: 0;
-    transition: border-color 0.15s, transform 0.15s;
+    color: var(--ink);
+    transition: border-color var(--dur-rapida), transform var(--dur-rapida);
   }
 
   .tema-card:hover,
@@ -182,37 +190,48 @@
   }
 
   .tema-cor {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background: var(--tema-cor);
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .tema-nome {
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: var(--texto-md);
   }
 
   .tema-qtd {
-    font-size: 13px;
+    font-size: var(--texto-sm);
     opacity: 0.7;
+  }
+
+  .tema-progresso {
+    font-size: var(--texto-xs);
+    font-weight: 700;
+    color: var(--tema-cor);
+    text-align: center;
   }
 
   .acoes-rodape {
     display: flex;
-    gap: 12px;
+    gap: var(--esp-3);
     justify-content: center;
   }
 
   .acao-secundaria {
-    min-height: 44px;
-    padding: 10px 20px;
+    min-height: var(--alvo-toque);
+    padding: var(--esp-2) var(--esp-5);
     background: transparent;
     border: 2px solid var(--rule);
     color: var(--ink);
     border-radius: var(--raio-botao);
-    font-size: 14px;
-    font-weight: 500;
+    font-size: var(--texto-sm);
+    font-weight: 600;
   }
 
   .acao-secundaria:hover,

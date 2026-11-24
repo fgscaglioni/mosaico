@@ -4,6 +4,7 @@
   import { store, initStore } from "../lib/store.svelte";
   import { getBadgeInfo } from "../lib/store.svelte";
   import { BADGES } from "../lib/domain/badges";
+  import Icon from "../lib/Icon.svelte";
 
   onMount(async () => {
     await initStore();
@@ -15,7 +16,9 @@
 </script>
 
 <header class="topo">
-  <button class="voltar" onclick={goBack} aria-label="Voltar ao início">←</button>
+  <button class="voltar" onclick={goBack} aria-label="Voltar ao início">
+    <Icon name="arrow-left" size={24} />
+  </button>
   <h1>Seu Progresso</h1>
 </header>
 
@@ -81,7 +84,9 @@
       {#each BADGES as badge}
         {@const conquistada = store.progress.badges.includes(badge.id)}
         <div class="badge-card" class:conquistada>
-          <span class="badge-icone">{conquistada ? "★" : "☆"}</span>
+          <span class="badge-icone">
+            <Icon name="star" size={28} />
+          </span>
           <span class="badge-nome">{badge.label}</span>
           <span class="badge-desc">{badge.description}</span>
           <span class="sr-only">{conquistada ? "Conquistada" : "Não conquistada"}</span>
