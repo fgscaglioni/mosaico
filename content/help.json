@@ -1,0 +1,25 @@
+{
+  "adult_tip": "Contar para um adulto de confiança não é fofoca. É proteção.",
+  "channels": [
+    {
+      "name": "Disque 100",
+      "what": "Direitos Humanos: violência contra criança e adolescente",
+      "number": "100"
+    },
+    {
+      "name": "Ligue 180",
+      "what": "Central de atendimento à mulher",
+      "number": "180"
+    },
+    {
+      "name": "CVV",
+      "what": "Apoio emocional, 24 horas",
+      "number": "188"
+    },
+    {
+      "name": "Conselho Tutelar",
+      "what": "Procure o da sua cidade",
+      "number": null
+    }
+  ]
+}

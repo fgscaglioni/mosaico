@@ -4,7 +4,8 @@
 **Origem:** pedido do dono em 24/11/2026 ("conteúdo muito bem curado porque são crianças"); requisito
 de trilha do Hack Brasil 2026, item 5.2.
 **Medição:** 24/11/2026, branch `main`, commit `e6a2d0c`. Lido: `docs/specs/PROJECT.md` (§8) e o
-regulamento do evento na fonte. Não há código de catálogo ainda; nada foi executado.
+regulamento do evento na fonte. O catálogo foi criado em 24/11 com 20 cartas em `rascunho`, sem código
+de importação ainda.
 
 ## Problema
 

@@ -1,0 +1,345 @@
+{
+  "catalog_version": 1,
+  "cards": [
+    {
+      "id": "bullying-01",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Distinguir brincadeira de humilhação repetida",
+      "stem": "No recreio, um colega chama outro de 'baleia' todos os dias. Isso é:",
+      "options": [
+        "Uma brincadeira sem problema",
+        "Uma repetição que machuca: é bullying",
+        "Um elogio",
+        "Algo que só importa se o outro chorar"
+      ],
+      "answer_index": 1,
+      "explanation": "Brincadeira é quando todos riem junto e para quando alguém pede. Quando a piada se repete e machuca, é intimidação sistemática, prevista na Lei 13.185/2015.",
+      "source": "Lei 13.185/2015, art. 2º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-02",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Reconhecer o papel de quem presencia",
+      "stem": "Você viu um colega sendo deixado de fora de propósito. O que mais ajuda?",
+      "options": [
+        "Rir junto para não sobrar para você",
+        "Chamar a pessoa para o seu grupo e contar para um adulto",
+        "Postar no grupo da turma",
+        "Não fazer nada, não é problema seu"
+      ],
+      "answer_index": 1,
+      "explanation": "Quem presencia também faz parte da cena. Incluir e avisar um adulto tira o peso de quem está sozinho, e a lei chama isso de dever de cuidado da comunidade escolar.",
+      "source": "Lei 13.185/2015, art. 4º, VIII",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-03",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Reconhecer cyberbullying com imagem",
+      "stem": "Alguém espalha no grupo da turma uma foto sua com um apelido que humilha. O que fazer?",
+      "options": [
+        "Responder com outra foto pior",
+        "Pedir para apagar, guardar a prova e contar para um adulto de confiança",
+        "Sair do grupo e não falar mais nada",
+        "Esperar passar sozinho"
+      ],
+      "answer_index": 1,
+      "explanation": "Expor alguém para humilhar, inclusive com imagem, é cyberbullying. Guardar a prova ajuda o adulto a agir, e quem compartilhou também responde por isso.",
+      "source": "Lei 13.185/2015, art. 2º, parágrafo único",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-04",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Escolher uma ação de apoio sem expor a pessoa",
+      "stem": "Um colega que sofre bullying não quer contar para ninguém. O que quem viu pode fazer?",
+      "options": [
+        "Contar para a turma toda o que está acontecendo",
+        "Ficar perto dele no recreio e avisar um adulto sem expor o colega",
+        "Rir para disfarçar",
+        "Combinar com os outros de não falar"
+      ],
+      "answer_index": 1,
+      "explanation": "Apoiar não é expor. Ficar junto diminui o isolamento, e contar para um adulto protege sem transformar a pessoa em assunto da escola.",
+      "source": "Lei 13.185/2015, art. 4º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-05",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Identificar a desculpa usada para justificar o bullying",
+      "stem": "Qual dessas frases é a desculpa mais comum de quem faz bullying?",
+      "options": [
+        "Perguntei se estava tudo bem",
+        "É só brincadeira, ele não liga",
+        "Vamos jogar juntos",
+        "Desculpa, eu errei"
+      ],
+      "answer_index": 1,
+      "explanation": "'É só brincadeira' aparece sempre que a piada machuca. Brincadeira termina quando alguém pede para parar; se continua, virou intimidação.",
+      "source": "Lei 13.185/2015, art. 2º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-01",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Nomear como racismo a ofensa a traços naturais",
+      "stem": "Um colega diz que o cabelo de outra criança 'é ruim'. Essa fala é:",
+      "options": [
+        "Opinião, cada um tem a sua",
+        "Racismo: desvaloriza a identidade e a história de uma pessoa negra",
+        "Só uma piada",
+        "Elogio disfarçado"
+      ],
+      "answer_index": 1,
+      "explanation": "Dizer que um traço natural é 'ruim' repete uma ideia racista. Racismo é crime previsto na Lei 7.716/1989 e não é opinião.",
+      "source": "Lei 7.716/1989",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-02",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer a cultura afro-brasileira como parte da história do país",
+      "stem": "Por que estudar a cultura afro-brasileira na escola?",
+      "options": [
+        "Porque só vale para quem é negro",
+        "Porque faz parte da história e da formação do Brasil",
+        "Porque só se fala disso no carnaval",
+        "Porque substitui a história de outros povos"
+      ],
+      "answer_index": 1,
+      "explanation": "A Lei 10.639/2003 tornou obrigatório o ensino de história e cultura afro-brasileira. Ela é parte da história de todo mundo que vive aqui.",
+      "source": "Lei 10.639/2003",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-03",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer o racismo estético contra o cabelo crespo",
+      "stem": "Alguém diz que o cabelo crespo 'precisa ser alisado para ficar arrumado'. Por que isso é racismo?",
+      "options": [
+        "Porque cabelo é só estética",
+        "Porque trata um traço natural de pessoas negras como defeito",
+        "Porque alisar o cabelo é caro",
+        "Porque todo mundo alisa"
+      ],
+      "answer_index": 1,
+      "explanation": "Chamar de 'desarrumado' o que nasce com a pessoa é dizer que o corpo negro precisa ser corrigido. Isso é racismo, mesmo quando dito com tom de conselho.",
+      "source": "Lei 7.716/1989; Lei 10.639/2003",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-04",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer intolerância religiosa",
+      "stem": "Uma colega de religião de matriz africana é chamada de 'coisa do mal' na sala. Isso é:",
+      "options": [
+        "Liberdade de opinião",
+        "Intolerância religiosa, que a lei trata como racismo",
+        "Brincadeira de criança",
+        "Assunto que só adulto resolve"
+      ],
+      "answer_index": 1,
+      "explanation": "Zombar de uma religião de matriz africana é intolerância religiosa e é tratada pela lei como racismo. A Constituição garante a liberdade de crença de todos.",
+      "source": "Lei 7.716/1989, art. 20; Constituição Federal, art. 5º, VI",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-05",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Escolher uma prática de valorização durante o ano todo",
+      "stem": "O que ajuda a valorizar a história afro-brasileira na escola?",
+      "options": [
+        "Falar do tema só em novembro",
+        "Conhecer escritores, músicos e cientistas negros brasileiros durante o ano",
+        "Separar as turmas por cor",
+        "Evitar o assunto para não constranger"
+      ],
+      "answer_index": 1,
+      "explanation": "História afro-brasileira não é data comemorativa: é conteúdo do ano inteiro. Conhecer quem produziu ciência, arte e literatura no Brasil muda o que a turma considera possível.",
+      "source": "Lei 10.639/2003; BNCC, Tema Contemporâneo Transversal Educação em Direitos Humanos",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-01",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Nomear como xenofobia a rejeição a quem vem de outro lugar",
+      "stem": "Uma família chegou de outro país e o filho entrou na sua turma. Alguém diz 'volta para o seu país'. Isso é:",
+      "options": [
+        "Brincadeira de criança",
+        "Xenofobia: rejeição a quem vem de outro lugar",
+        "Justiça",
+        "Opinião política"
+      ],
+      "answer_index": 1,
+      "explanation": "Xenofobia é tratar alguém como inferior por causa da origem. Ninguém escolhe onde nasceu, e a Constituição proíbe discriminação por origem.",
+      "source": "Constituição Federal, art. 3º, IV e art. 5º, XLI",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-02",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Escolher uma ação de acolhimento",
+      "stem": "Qual atitude acolhe um colega que acabou de chegar e fala outra língua?",
+      "options": [
+        "Falar só com quem já conhece",
+        "Mostrar a escola e aprender duas palavras da língua dele",
+        "Corrigir o sotaque em voz alta",
+        "Pedir para ele ficar quieto até aprender"
+      ],
+      "answer_index": 1,
+      "explanation": "Acolher é pequeno no gesto e enorme para quem chegou: mostrar o caminho e demonstrar interesse pela língua do outro.",
+      "source": "BNCC, Tema Contemporâneo Transversal Educação em Direitos Humanos (MEC, 2019)",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-03",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Reconhecer zombaria de sotaque como xenofobia",
+      "stem": "Um colega imita o sotaque de outro aluno e a turma ri. Isso é:",
+      "options": [
+        "Engraçado e sem consequência",
+        "Xenofobia: zombar da origem pelo jeito de falar",
+        "Normal, todo mundo ri de tudo",
+        "Um elogio ao sotaque"
+      ],
+      "answer_index": 1,
+      "explanation": "Rir do jeito de falar de alguém é rir de onde a pessoa nasceu. O riso da turma não transforma humilhação em graça.",
+      "source": "Constituição Federal, art. 3º, IV",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-04",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Distinguir curiosidade respeitosa de pergunta invasiva",
+      "stem": "Uma família refugiada chega à sua escola. Qual pergunta é respeitosa?",
+      "options": [
+        "Por que vocês tiveram que fugir?",
+        "Qual é o seu nome e do que você gosta de brincar?",
+        "Quanto custou a viagem de vocês?",
+        "Quando você vai voltar para o seu país?"
+      ],
+      "answer_index": 1,
+      "explanation": "Curiosidade é bem-vinda. Perguntar sobre fuga, dinheiro ou volta expõe sofrimento que a pessoa não escolheu contar. Comece pelo nome e pela brincadeira.",
+      "source": "Lei 9.474/1997 (Estatuto dos Refugiados); Constituição Federal, art. 5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-05",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Reconhecer preconceito regional dentro do Brasil",
+      "stem": "Alguém diz que 'nordestino é tudo preguiçoso'. Isso é:",
+      "options": [
+        "Piada regional, faz parte",
+        "Preconceito regional, que também é xenofobia",
+        "Verdade sobre algumas pessoas",
+        "Opinião que não tem efeito"
+      ],
+      "answer_index": 1,
+      "explanation": "Xenofobia não acontece só com estrangeiro: tratar alguém como inferior por causa da região de origem é o mesmo preconceito, e a lei brasileira protege contra isso.",
+      "source": "Constituição Federal, art. 3º, IV; Lei 7.716/1989",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-01",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Identificar proibição baseada em gênero",
+      "stem": "Um colega diz que menina não pode jogar futebol. O que está errado nessa frase?",
+      "options": [
+        "Nada, é tradição",
+        "Ela usa o gênero para proibir algo que qualquer criança pode fazer",
+        "Menino também não pode jogar",
+        "Futebol é perigoso para todos"
+      ],
+      "answer_index": 1,
+      "explanation": "Brincar e praticar esporte não é coisa de menino ou de menina. Proibir alguém pelo gênero é uma forma de desigualdade que a Constituição veda.",
+      "source": "Constituição Federal, art. 5º, I",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-02",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer segredo que não se guarda e pedir ajuda",
+      "stem": "Um adulto pede para você guardar segredo sobre um toque que te deixou desconfortável. O que fazer?",
+      "options": [
+        "Guardar, segredo é segredo",
+        "Contar para um adulto de confiança, como um professor ou responsável",
+        "Contar só se doer",
+        "Esperar o adulto pedir desculpa"
+      ],
+      "answer_index": 1,
+      "explanation": "Nenhum adulto deve pedir segredo sobre o seu corpo. Contar não é fofoca: é proteção. O Disque 100 é gratuito e anônimo, e o ECA garante esse direito.",
+      "source": "ECA, art. 18; Disque 100",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-03",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer tarefa doméstica dividida por gênero",
+      "stem": "Na sua casa, quem deveria lavar a louça?",
+      "options": [
+        "Sempre a mãe",
+        "Sempre as meninas da casa",
+        "Quem estiver disponível, sem separar a tarefa por gênero",
+        "Só quem ganha menos"
+      ],
+      "answer_index": 2,
+      "explanation": "Cuidar da casa é tarefa de quem mora nela. Quando a tarefa é separada por gênero, sobra sempre para a mesma pessoa, e isso é uma desigualdade que começa cedo.",
+      "source": "Constituição Federal, art. 5º, I; art. 226, §5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-04",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Separar brinquedo de identidade de gênero",
+      "stem": "Um menino leva uma boneca para a escola e é chamado de 'menininha' por causa disso. Qual resposta está certa?",
+      "options": [
+        "Ele não devia trazer boneca para a escola",
+        "Ele devia ser proibido de brincar com isso",
+        "Quem brinca de boneca é menina, então a turma está certa",
+        "Brincar não define o que a pessoa é"
+      ],
+      "answer_index": 3,
+      "explanation": "Brinquedo não define identidade. Chamar alguém de 'menininha' como ofensa usa o gênero para humilhar, e isso é bullying.",
+      "source": "ECA, art. 18; Lei 13.185/2015, art. 2º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-05",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer que o próprio corpo tem limite",
+      "stem": "Alguém insiste em te abraçar depois que você já disse que não quer. O que vale?",
+      "options": [
+        "O abraço continua, porque é carinho",
+        "O 'não' vale: seu corpo tem limite, mesmo com quem gosta de você",
+        "Só vale quando você for adulto",
+        "Não precisa dizer nada"
+      ],
+      "answer_index": 1,
+      "explanation": "Carinho não pode ser obrigatório. Dizer 'não' não é ofensa: é limite. O Estatuto da Criança e do Adolescente protege o direito de dizer não.",
+      "source": "ECA, art. 18",
+      "review_status": "rascunho"
+    }
+  ]
+}

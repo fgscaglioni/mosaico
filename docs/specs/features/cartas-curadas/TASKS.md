@@ -15,9 +15,8 @@ Ordem: esquema antes do conteúdo, conteúdo antes da tela. Sem migration: este 
 
 ## Fase 2 - conteúdo
 
-- [ ] `content/cards.pt-BR.json` (novo): as 8 cartas semente com fonte e explicação. (R1, R5)
-- [ ] `content/cards.pt-BR.json`: as 12 cartas restantes, 3 por tema, seguindo a rubrica do
-  `PROJECT.md` §8. (R1, R5)
+- [ ] `content/cards.pt-BR.json` (existente): conferir as 20 cartas contra a rubrica do `PROJECT.md`
+  §8 e corrigir o que não passar. Não escrever carta nova sem ordem do dono. (R1, R5)
 - [ ] `content/cards.pt-BR.json`: `review_status` de cada carta passa a `revisado` depois da leitura
   humana; nenhuma carta fica em `rascunho` na entrega. (R2)
 - [ ] `tests/cartas.test.ts`: `versao_do_catalogo_e_positiva`. (V4)

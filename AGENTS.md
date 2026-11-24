@@ -5,6 +5,7 @@
 | Documento | Caminho |
 |---|---|
 | Spec de feature (requisitos `R#`, verificação `V#`, tarefas) | `docs/specs/features/<kebab-case>/{SPECIFICATION.md,TASKS.md}` |
+| Como construir (scaffold, comandos, ordem, tokens, armadilhas) | `docs/specs/IMPLEMENTATION.md` |
 | Estado do projeto (fase, bloqueios, próximo passo) | `docs/specs/STATE.md` |
 | Visão do produto e políticas de conteúdo e de dados | `docs/specs/PROJECT.md` |
 | Decisão de arquitetura | `docs/decisions/ADR-<nnnn>-<slug>.md` |

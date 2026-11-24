@@ -14,6 +14,7 @@ Entrega para o Hack Brasil 2026, trilha Acesso à educação.
 |---|---|
 | O que o produto é e quais requisitos precisa cumprir | [`docs/specs/PROJECT.md`](docs/specs/PROJECT.md) |
 | Em que pé está a construção e qual é o próximo passo | [`docs/specs/STATE.md`](docs/specs/STATE.md) |
+| Como construir: scaffold, comandos, ordem, tokens | [`docs/specs/IMPLEMENTATION.md`](docs/specs/IMPLEMENTATION.md) |
 | Por que as decisões técnicas são essas | [`docs/decisions/`](docs/decisions/README.md) |
 
 ## Estrutura
