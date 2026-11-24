@@ -1,6 +1,6 @@
 # STATE.md — Mosaico
 
-**Fase:** prática gamificada completa (telas, domínio, eventos); canal de ajuda e sincronização a seguir
+**Fase:** ajuda e encaminhamento concluída; servidor e sincronização de eventos a seguir
 **Atualizado:** 2026-11-24
 **Prazo duro:** 2026-11-30 23h59 (America/Sao_Paulo) · submissão planejada para 29/11
 
@@ -28,12 +28,12 @@ requisito está nas specs e o que é execução está no `IMPLEMENTATION.md`.
 | `docs/specs/IMPLEMENTATION.md` | scaffold, comandos, ordem de execução, tokens de interface, armadilhas |
 | `docs/specs/features/` | 5 specs de feature, com requisitos `R#`, verificação `V#` e `TASKS.md` |
 | `content/cards.pt-BR.json` | 20 cartas, 5 por tema, **todas em `rascunho`** |
-| `content/help.json` | 4 canais de ajuda |
+| `content/help.json` | 4 canais de ajuda, validados por `HelpSchema` |
 | `docs/decisions/` | 4 ADRs + índice |
-| `src/`, `tests/` | scaffold + `content.ts` + `cartas.test.ts` (7) + domínio + store + telas (`Home`, `Theme`, `Card`, `Progress`) + `pratica.test.ts` (29) + `pratica-evento.test.ts` (4) = **40 testes verdes**, `svelte-check 0 errors` |
+| `src/`, `tests/` | scaffold + `content.ts` + `cartas.test.ts` (7) + domínio + store + telas (`Home`, `Theme`, `Card`, `Progress`, `Help`) + link global no `App` + `pratica.test.ts` (29) + `pratica-evento.test.ts` (4) + `ajuda.test.ts` (7) = **47 testes verdes**, `svelte-check 0 errors` |
 | `server.mjs`, `e2e/`, deploy, vídeo, submissão | **não existem** |
 
-Progresso do plano de implementação: **T5 de T21** (prática gamificada completa).
+Progresso do plano de implementação: **T6 de T21** (ajuda e encaminhamento completa).
 
 ## Handoff
 
