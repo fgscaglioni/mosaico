@@ -1,0 +1,12 @@
+.smart-env
+.tmp*
+.trash
+
+node_modules/
+dist/
+data/
+data-e2e/
+test-results/
+playwright-report/
+.env
+.DS_Store
