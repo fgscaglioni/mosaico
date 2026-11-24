@@ -1,6 +1,6 @@
 # STATE.md — Mosaico
 
-**Fase:** scaffold + catálogo de cartas (fases 1 e 3) concluídos; domínio puro em andamento
+**Fase:** scaffold + catálogo de cartas + domínio puro (fase 1) concluídos; store/registro de evento em andamento
 **Atualizado:** 2026-11-24
 **Prazo duro:** 2026-11-30 23h59 (America/Sao_Paulo) · submissão planejada para 29/11
 
@@ -30,10 +30,10 @@ requisito está nas specs e o que é execução está no `IMPLEMENTATION.md`.
 | `content/cards.pt-BR.json` | 20 cartas, 5 por tema, **todas em `rascunho`** |
 | `content/help.json` | 4 canais de ajuda |
 | `docs/decisions/` | 4 ADRs + índice |
-| `src/`, `tests/` | scaffold + `content.ts` + `cartas.test.ts` (7 testes verdes) |
+| `src/`, `tests/` | scaffold + `content.ts` + `cartas.test.ts` (7 testes) + domínio puro (`xp`, `streak`, `badges`, `queue`, `types`) + `pratica.test.ts` (29 testes) |
 | `server.mjs`, `e2e/`, deploy, vídeo, submissão | **não existem** |
 
-Progresso do plano de implementação: **T2 de T21** (scaffold + catálogo).
+Progresso do plano de implementação: **T3 de T21** (scaffold + catálogo + domínio puro fase 1).
 
 ## Handoff
 
