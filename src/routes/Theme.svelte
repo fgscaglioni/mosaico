@@ -1,3 +1,6 @@
+<script lang="ts">
+</script>
+
 <h1>Temas</h1>
 <p>Escolha um tema para começar.</p>
 <ul>

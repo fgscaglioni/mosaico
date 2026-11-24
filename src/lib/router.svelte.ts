@@ -10,3 +10,10 @@ window.addEventListener("hashchange", () => {
 export function navigate(path: string): void {
   location.hash = path;
 }
+
+export const routeStore = {
+  subscribe(fn: (value: { path: string }) => void) {
+    fn(route);
+    return () => {};
+  },
+};

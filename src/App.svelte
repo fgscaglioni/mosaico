@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { route } from "./lib/router.svelte.ts";
+  import { routeStore as route } from "./lib/router.svelte";
   import Home from "./routes/Home.svelte";
   import Theme from "./routes/Theme.svelte";
   import Card from "./routes/Card.svelte";
