@@ -66,6 +66,14 @@ export const store = {
   get queue() {
     return queue;
   },
+  selectTheme,
+  loadCard,
+  recordAnswer,
+  retry,
+  recordHelpOpen,
+  getBadgeInfo,
+  clearFeedback,
+  syncNow,
 };
 
 function storedToDomain(events: StoredEvent[]): DomainEvent[] {
