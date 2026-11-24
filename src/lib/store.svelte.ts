@@ -34,6 +34,7 @@ const initialProgress: ProgressState = {
 
 let progress = $state<ProgressState>({ ...initialProgress });
 let loading = $state(true);
+let storeInitialized = false;
 let currentTheme = $state<Card["theme"] | null>(null);
 let currentCard = $state<Card | null>(null);
 let attempt = $state(1);
@@ -128,6 +129,8 @@ async function loadFromDB() {
 }
 
 export async function initStore(): Promise<void> {
+  if (storeInitialized) return;
+  storeInitialized = true;
   await loadFromDB();
 }
 
@@ -180,12 +183,7 @@ export async function recordAnswer(cardId: string, answerIndex: number): Promise
   if (correct) {
     feedback = { type: "correct", message: card.explanation, xp };
     showRetry = false;
-    const nextId = queue.find((id) => catalog.cards.find((c) => c.id === id)?.theme === currentTheme);
-    if (nextId && nextId !== cardId) {
-      loadCard(nextId);
-    } else {
-      currentCard = null;
-    }
+    queue = queue.filter((id) => id !== cardId);
   } else {
     feedback = { type: "wrong", message: card.explanation, xp };
     showRetry = true;

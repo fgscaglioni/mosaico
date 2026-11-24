@@ -8,7 +8,7 @@ window.addEventListener("hashchange", () => {
 });
 
 export function navigate(path: string): void {
-  location.hash = path;
+  location.hash = path.startsWith("#") ? path : `#${path}`;
 }
 
 export const routeStore = {
