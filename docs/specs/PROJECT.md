@@ -48,38 +48,31 @@ formas de violência cotidiana, com conteúdo curado e progresso que sobrevive �
 | Painel | Página pública com agregado, sem identidade |
 | Entrega | Repositório público, demo no ar, vídeo de até 3 minutos, README e docs |
 
-## 6. Requisitos
+## 6. Especificações de feature
 
-| ID | Requisito | Aceite verificável |
+Cada spec tem requisitos (`R#`), critérios de verificação (`V#`) e tarefas próprios. A numeração de
+requisito vive dentro da spec; este documento não a duplica.
+
+| Spec | Cobre | Requisitos |
 |---|---|---|
-| R1 | O app funciona offline depois do primeiro carregamento | Com a rede desligada, recarregar e responder uma carta funciona (V3) |
-| R2 | O progresso persiste no aparelho | Recarregar offline mantém XP, nível e sequência (V3) |
-| R3 | A sincronização é idempotente | Enviar o mesmo `event_id` duas vezes devolve `accepted: 1` e depois `duplicates: 1` (V4) |
-| R4 | O agregado público não expõe identidade | `/api/aggregate` devolve só contadores; nenhum `device_id`, nome ou campo livre (V5) |
-| R5 | O catálogo é curado e completo | 20 cartas, 5 por tema, `source` e `explanation` preenchidos, `answer_index` válido (V2) |
-| R6 | O gate editorial é automático | O teste falha com carta sem fonte, sem explicação, com índice inválido ou com termo da lista proibida (V2) |
-| R7 | A gamificação é determinística | XP, nível, sequência e medalhas são funções puras, cobertas por teste (V1) |
-| R8 | A carta errada volta na mesma sessão | Fila devolve a carta três posições à frente, sem duplicar (V1) |
-| R9 | A interface é acessível | Alvo de toque ≥ 44 px, contraste AA, feedback em `aria-live`, percentual em texto na grade (V6) |
-| R10 | O servidor é append-only e sem banco | Eventos em `events.jsonl`, dedup por `event_id`, `GET /api/health` responde (V4) |
-| R11 | A demo é pública e sem login | A URL abre em janela anônima e responde `/api/health` (V7) |
-| R12 | O vídeo tem até 3 minutos e abre sem login | Link público, duração cronometrada (V8) |
-| R13 | O build é reproduzível em container | `npm ci` + `npm run build` dentro do Docker, health OK (V9) |
-| R14 | Interface e conteúdo em pt-BR, sem campo livre | Nenhum `input` de texto no produto (V5) |
+| [cartas-curadas](features/cartas-curadas/SPECIFICATION.md) | catálogo, gate editorial, fonte, faixa etária | 5 |
+| [ajuda-e-encaminhamento](features/ajuda-e-encaminhamento/SPECIFICATION.md) | tela de ajuda com canais públicos, sem relato | 5 |
+| [pratica-gamificada](features/pratica-gamificada/SPECIFICATION.md) | XP, nível, sequência, medalhas, retomada, acessibilidade | 8 |
+| [modo-offline](features/modo-offline/SPECIFICATION.md) | precache, IndexedDB, jogo sem rede | 5 |
+| [sincronizacao-de-eventos](features/sincronizacao-de-eventos/SPECIFICATION.md) | log de eventos, deduplicação, agregado público | 7 |
 
-## 7. Verificação
+## 7. Condições de entrega
 
-| ID | Comando | Saída esperada |
-|---|---|---|
-| V1 | `npm test` | todos os testes verdes, ≥ 22 |
-| V2 | `npm test -- tests/content.test.ts` | 6 passed |
-| V3 | `npm run test:e2e` | 1 passed (offline e sync) |
-| V4 | `curl -X POST /api/sync` com o mesmo evento duas vezes | `accepted: 1` e depois `duplicates: 1` |
-| V5 | `curl /api/aggregate` | `{respostas, acertos, xp, aparelhos, por_tema}` — nada além |
-| V6 | `npx svelte-check` | `0 errors` |
-| V7 | `curl https://<host>/api/health` | `{"status":"ok","version":"0.1.0"}` |
-| V8 | abrir o link do vídeo em janela anônima | toca, duração < 3:00 |
-| V9 | `docker build && docker run` | health responde em `localhost:8787` |
+Não são feature: são portas do evento, e nenhuma delas se prova com teste de unidade.
+
+| Condição | Prova |
+|---|---|
+| Repositório público criado depois de 04/11 21h, sem fork nem histórico importado (6.1) | <https://github.com/fgscaglioni/mosaico>, primeiro commit em 24/11 |
+| Licença que não impede o júri de ler, executar e testar (6.6) | `LICENSE` MIT na raiz |
+| Demo pública, sem login, no ar durante a avaliação (7.3) | `curl https://<host>/api/health` devolve `ok` |
+| Vídeo de até 3 minutos, acessível sem login (7.2) | link público, duração cronometrada |
+| Build reproduzível em container | `docker build && docker run`, health responde |
+| Conteúdo revisado por pessoa | `review_status: "revisado"` em todas as 20 cartas |
 
 ## 8. Política de conteúdo
 

@@ -15,6 +15,8 @@
 | `LICENSE` (MIT) | criado |
 | `docs/specs/PROJECT.md` | especificação aprovada (requisitos R1–R14, verificação V1–V9) |
 | `docs/specs/STATE.md` | este arquivo |
+| `docs/specs/features/` | 5 specs de feature (cartas, ajuda, prática, offline, sync) |
+| `AGENTS.md` | árvore de documentos declarada |
 | `docs/decisions/` | 4 ADRs + índice |
 | Código (`src/`, `server.mjs`, `content/`, `tests/`, `e2e/`) | **não existe** |
 | Deploy, vídeo, submissão | **não existem** |
