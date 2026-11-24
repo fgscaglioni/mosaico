@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { xpForAnswer, levelFromXp, XP_FIRST_CORRECT, XP_RETRY_CORRECT, XP_WRONG } from "../src/lib/domain/xp";
 import { localDay, daysInARow } from "../src/lib/domain/streak";
 import { BADGES, badgesFor, type Event, type BadgeId } from "../src/lib/domain/badges";
