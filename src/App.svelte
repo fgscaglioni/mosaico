@@ -1,11 +1,21 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import { routeStore as route, navigate } from "./lib/router.svelte";
+  import { startAutoSync, stopAutoSync, triggerSyncOnOnline } from "./lib/sync";
   import Home from "./routes/Home.svelte";
   import Theme from "./routes/Theme.svelte";
   import Card from "./routes/Card.svelte";
   import Progress from "./routes/Progress.svelte";
   import Help from "./routes/Help.svelte";
   import Panel from "./routes/Panel.svelte";
+
+  onMount(() => {
+    startAutoSync();
+    triggerSyncOnOnline();
+    return () => {
+      stopAutoSync();
+    };
+  });
 
   function goHelp() {
     navigate("/ajuda");
