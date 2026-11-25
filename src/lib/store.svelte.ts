@@ -147,6 +147,13 @@ export function selectTheme(theme: Card["theme"]): void {
 export function loadCard(cardId: string): void {
   const card = catalog.cards.find((c) => c.id === cardId);
   currentCard = card ?? null;
+  if (card) {
+    // link direto para uma carta também define o tema; sem isso recordAnswer sai cedo e nada é gravado
+    currentTheme = card.theme;
+    if (!queue.includes(card.id)) {
+      queue = catalog.cards.filter((c) => c.theme === card.theme).map((c) => c.id);
+    }
+  }
   attempt = 1;
   feedback = null;
   showRetry = false;
