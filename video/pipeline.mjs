@@ -86,10 +86,14 @@ try {
     if (r.status !== 0) throw new Error(`hyperframes ${args[0]} falhou`);
   }
 
-  const sonda = spawnSync("ffprobe", [
-    "-v", "error", "-show_entries", "format=duration,size:stream=codec_name,width,height",
-    "-of", "default=noprint_wrappers=1", resolve(OUT, "mosaico-demo.mp4"),
-  ]).toString();
+  const sonda = spawnSync(
+    "ffprobe",
+    [
+      "-v", "error", "-show_entries", "format=duration,size:stream=codec_name,width,height",
+      "-of", "default=noprint_wrappers=1", resolve(OUT, "mosaico-demo.mp4"),
+    ],
+    { encoding: "utf8" },
+  ).stdout;
   console.log(`\n${sonda}`);
   console.log(`vídeo: ${resolve(OUT, "mosaico-demo.mp4")}`);
 } finally {
