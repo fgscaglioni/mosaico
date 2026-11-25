@@ -5,8 +5,23 @@ a reconhecer e responder a bullying, racismo, xenofobia e violência de gênero.
 
 Cada carta entrega uma peça. O álbum só fecha quando a criança passa pelos quatro temas.
 
-**Status:** especificação aprovada, código não iniciado (24/11/2026).
+**Status:** aplicativo implementado e testado (61 testes de domínio + 10 E2E verdes).
 Entrega para o Hack Brasil 2026, trilha Acesso à educação.
+
+## Como rodar
+
+```bash
+npm ci
+npm run build && npm run preview   # http://localhost:8787
+npm run test                        # domínio (Vitest)
+npm run test:e2e                    # offline, ajuda e link direto (Playwright)
+npm run video                       # gera o vídeo de demo em video/out/mosaico-demo.mp4
+docker build -t mosaico . && docker run -p 8787:8787 -v "$PWD/data:/app/data" mosaico
+```
+
+O vídeo é gerado pelo código: Playwright dirige as cenas, edge-tts narra em pt-BR e o HyperFrames
+compõe. Ver [`video/README.md`](video/README.md).
+
 
 ## Por onde começar
 

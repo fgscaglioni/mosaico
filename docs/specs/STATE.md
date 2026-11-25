@@ -1,7 +1,7 @@
 # STATE.md — Mosaico
 
-**Fase:** implementação completa de código e container; bloqueios externos a seguir (revisão humana das cartas, deploy público e vídeo)
-**Atualizado:** 2026-11-24
+**Fase:** implementação, container e vídeo de demo concluídos; restam revisão humana das cartas e deploy público
+**Atualizado:** 2026-11-25
 **Prazo duro:** 2026-11-30 23h59 (America/Sao_Paulo) · submissão planejada para 29/11
 
 ---
@@ -31,9 +31,10 @@ requisito está nas specs e o que é execução está no `IMPLEMENTATION.md`.
 | `content/help.json` | 4 canais de ajuda, validados por `HelpSchema` |
 | `docs/decisions/` | 4 ADRs + índice |
 | `src/`, `tests/`, `server.mjs` | scaffold + `content.ts` + `cartas.test.ts` (7) + domínio + store + telas (`Home`, `Theme`, `Card`, `Progress`, `Help`, `Panel`) + link global no `App` + `server.mjs` + `pratica.test.ts` (29) + `pratica-evento.test.ts` (4) + `ajuda.test.ts` (7) + `sync.test.ts` (4) = **51 testes verdes**, `svelte-check 0 errors` |
-| `e2e/` | `offline.spec.ts` (V1–V4) e `ajuda.spec.ts` (V1, V2, V4, V5) = **8 testes E2E verdes** |
+| `e2e/` | `offline.spec.ts` (V1–V4), `ajuda.spec.ts` (V1, V2, V4, V5) e `carta-link-direto.spec.ts` = **10 testes E2E verdes** |
 | `Dockerfile` | multi-stage build verificado e testado com container real (`GET /api/health` 200) |
-| deploy, vídeo, submissão | **não existem** (bloqueios externos) |
+| `video/` | pipeline `npm run video`: Playwright grava as cenas, edge-tts narra em pt-BR, HyperFrames compõe e renderiza. Saída `video/out/mosaico-demo.mp4`, 1920x1080, 1m43s, com `hyperframes check` verde |
+| deploy, submissão | **não existem** (bloqueios externos) |
 
 Progresso do plano de implementação: **T9 de T21** (implementação e testes concluídos com sucesso).
 
@@ -53,7 +54,7 @@ Progresso do plano de implementação: **T9 de T21** (implementação e testes c
 |---|---|---|
 | Revisão pedagógica das 20 cartas | R2 e R5 de `cartas-curadas`; credibilidade do pitch | Humano lê e troca `review_status` para `revisado` antes de 28/11 |
 | Host de deploy | Condições de entrega, linha da demo | Acesso ao Coolify (ou outra máquina) com volume persistente |
-| Texto do vídeo e gravação | Item 7.2 do regulamento | Dono do projeto |
+| Publicação do vídeo no YouTube (não listado) | Item 7.2 | Dono do projeto: subir o MP4 e colar o link no painel |
 
 ## Ambiente
 
@@ -71,3 +72,4 @@ Progresso do plano de implementação: **T9 de T21** (implementação e testes c
 | Data | Fato |
 |---|---|
 | 2026-11-24 | Nome decidido (Mosaico), repositório criado e publicado, 4 ADRs, 5 specs de feature, catálogo com 20 cartas em rascunho, documento de implementação |
+| 2026-11-25 | Vídeo de demo automatizado (Playwright + edge-tts + HyperFrames, 1m43s, check verde); correção do link direto de carta, que não gravava resposta; README com como rodar |

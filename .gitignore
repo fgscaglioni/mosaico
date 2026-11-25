@@ -10,3 +10,6 @@ test-results/
 playwright-report/
 .env
 .DS_Store
+
+# vídeo de demo: artefatos gerados por video/pipeline.mjs
+video/out/

@@ -1,0 +1,80 @@
+{
+  "voice": "pt-BR-FranciscaNeural",
+  "rate": "+4%",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "scenes": [
+    {
+      "id": "cena1",
+      "tipo": "cartela",
+      "kicker": "O PROBLEMA",
+      "titulo": "Sem internet, a aula não para",
+      "linha": "Escola pública, laboratório offline. Como ensinar respeito sem depender da rede?",
+      "narracao": "Escola pública. Laboratório sem internet. Como ensinar respeito quando a rede não chega? O Mosaico é um álbum de cartas para crianças de oito a onze anos. Ele abre e joga sem conexão."
+    },
+    {
+      "id": "cena2",
+      "tipo": "clip",
+      "clip": "cena2.mp4",
+      "kicker": "O PRODUTO",
+      "titulo": "Um álbum que se completa",
+      "linha": "Quatro temas, cinco cartas cada. Progresso guardado no aparelho.",
+      "narracao": "Cada tema tem cinco cartas. Quatro temas: bullying, racismo, xenofobia e violência de gênero. No topo, nível, XP, sequência e medalhas. Tudo guardado no aparelho."
+    },
+    {
+      "id": "cena3",
+      "tipo": "clip",
+      "clip": "cena3.mp4",
+      "kicker": "PROVA",
+      "titulo": "Modo avião, app funcionando",
+      "linha": "Rede desligada no navegador. XP e medalha sem consultar servidor.",
+      "narracao": "Agora o modo avião. A rede cai, e o app continua. A criança lê a situação, escolhe a resposta e recebe retorno na hora. O acerto soma dez pontos. A medalha aparece sem consultar servidor."
+    },
+    {
+      "id": "cena4",
+      "tipo": "clip",
+      "clip": "cena4.mp4",
+      "kicker": "SINCRONIZAÇÃO",
+      "titulo": "O evento sobe, o dado pessoal não",
+      "linha": "Log append-only. Zero nome, zero conta, zero texto livre.",
+      "narracao": "Quando a rede volta, os eventos sobem. O painel soma respostas e acertos por tema. Sobe o evento: nenhum nome, nenhuma conta, nenhum texto livre."
+    },
+    {
+      "id": "cena5",
+      "tipo": "clip",
+      "clip": "cena5.mp4",
+      "kicker": "CURADORIA",
+      "titulo": "Cada carta tem fonte e explicação",
+      "linha": "Lei 13.185/2015 · Lei 7.716/1989 · Lei 10.639/2003 · BNCC",
+      "narracao": "Toda carta tem fonte e explicação. As perguntas vêm de lei brasileira: bullying na Lei treze mil cento e oitenta e cinco, racismo na sete mil setecentos e dezesseis, cultura afro-brasileira na dez mil seiscentos e trinta e nove. Nada é criado em tempo de execução."
+    },
+    {
+      "id": "cena6",
+      "tipo": "diagrama",
+      "kicker": "ARQUITETURA",
+      "titulo": "Log de eventos, não estado central",
+      "linha": "Aparelho grava · servidor agrega · service worker guarda",
+      "narracao": "A arquitetura é um log de eventos. O aparelho grava, o servidor só agrega. Sem estado central e sem conflito. O service worker guarda o que já foi baixado, e o app abre sem rede."
+    },
+    {
+      "id": "cena7",
+      "tipo": "clip",
+      "clip": "cena7.mp4",
+      "kicker": "ACOLHIMENTO",
+      "titulo": "Ajuda em toda tela",
+      "linha": "Disque 100 · Ligue 180 · CVV 188",
+      "narracao": "Em toda tela existe o botão de ajuda. Disque cem, Ligue cento e oitenta, CVV cento e oitenta e oito. O Mosaico não recebe relato, e não substitui o acolhimento."
+    },
+    {
+      "id": "cena8",
+      "tipo": "final",
+      "kicker": "HACK BRASIL 2026",
+      "titulo": "Mosaico",
+      "linha": "Peças que ensinam respeito",
+      "narracao": "Mosaico. Peças que ensinam respeito. Hack Brasil, dois mil e vinte e seis. Trilha acesso à educação."
+    }
+  ]
+}
