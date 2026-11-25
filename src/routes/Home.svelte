@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { navigate } from "../lib/router.svelte";
   import { store, initStore, selectTheme, getBadgeInfo } from "../lib/store.svelte";
+  import type { BadgeId } from "../lib/domain/badges";
   import { catalog } from "../lib/content";
   import Icon from "../lib/Icon.svelte";
 
@@ -22,8 +23,8 @@
     navigate("/ajuda");
   }
 
-  function badgeLabel(id: string) {
-    return getBadgeInfo(id as any)?.label ?? id;
+  function badgeLabel(id: BadgeId) {
+    return getBadgeInfo(id)?.label ?? id;
   }
 
   const temas = catalog.cards.filter((c, i, a) => a.findIndex(x => x.theme === c.theme) === i);

@@ -10,6 +10,7 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "check": "svelte-check --tsconfig ./tsconfig.json",
+    "gate": "npm run check && npm test && npm run test:e2e",
     "video": "node video/pipeline.mjs"
   },
   "devDependencies": {
