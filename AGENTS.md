@@ -20,5 +20,7 @@ Não existe outra árvore de spec neste repositório.
 - Zero dado pessoal: sem nome, e-mail, texto livre, foto ou upload.
 - `src/lib/domain/` é puro: sem DOM, sem IndexedDB, sem `fetch`.
 - O app funciona sem rede. Recurso novo que não funciona offline não entra.
-- Toda tarefa de `TASKS.md` cita o `R#` e o `V#` que ela cumpre.
+- Toda tarefa de `TASKS.md` que toca `src/`, `tests/` ou `e2e/` cita o `R#` ou o `V#` que cumpre.
+- Todo `R#` da `SPECIFICATION.md` tem ao menos uma tarefa que o cumpre. `tests/specs.test.ts` falha se não.
+- Antes de commit: `npm run gate` (svelte-check + unit + e2e). O CI roda o mesmo comando.
 - Commit `tipo(escopo): descrição`, em português.
