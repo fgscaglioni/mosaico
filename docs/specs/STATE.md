@@ -1,7 +1,7 @@
 # STATE.md — Mosaico
 
 **Fase:** implementação, container e vídeo de demo concluídos; restam revisão humana das cartas e deploy público
-**Atualizado:** 2026-11-25
+**Atualizado:** 2026-11-27
 **Prazo duro:** 2026-11-30 23h59 (America/Sao_Paulo) · submissão planejada para 29/11
 
 ---
@@ -76,3 +76,5 @@ Progresso do plano de implementação: **T9 de T21** (implementação e testes c
 | 2026-11-27 | Catálogo expandido para 80 cartas (20/tema, `catalog_version` 2); extração de `Topo`/`Metrica`/`TemaCard`; auditoria do edital concluída; hospedagem recomendada no Coolify, Firebase como pós-hack |
 | 2026-11-27 | Aviso global de fase experimental (questões sem avaliação humana); alternativas embaralhadas a cada apresentação (`pratica-gamificada` R9, nova spec `fase-experimental`); vídeo refeito (1m42s, 1920x1080) |
 | 2026-11-27 | Narração do vídeo suavizada (tom quente, ritmo −2%) e trilha sonora de fundo sintetizada em ffmpeg, 27 dB abaixo da narração; vídeo final 2m10s |
+| 2026-11-27 | E-mail da organização: rascunho exige vídeo com cada integrante na câmera (SIGNAL é solo), README com problema/solução/como rodar e página pública em HTTPS. README refeito, roteiro de gravação em `video/ROTEIRO-RASCUNHO.md`, commit `75f683b` publicado. Deploy no Coolify ainda pendente de criação manual do app (MCP é só leitura) |
+| 2026-11-27 | Documentos legais atualizados a partir das páginas oficiais (Regulamento; Termos de 02/11/2026; Privacidade de 03/11/2026): `PROJECT.md` §13 refeito com fontes, operadora (AI TECH SPACE LLC), itens 1.3, 4.1, 5.2, 6.3, 6.4, 7.2 (aceite e autorização 13.1), 7.4, 8.1, 8.4 (congelamento até a final de 12/12), 9.4, 11.1, 13.1–13.3 e distinção entre privacidade da organização (dados do time) e do app (zero dados pessoais, ADR-0004). Wording do 8.4 corrigido também no `IMPLEMENTATION.md` §9. Nenhuma mudança em `src/` |

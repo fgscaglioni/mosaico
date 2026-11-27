@@ -130,16 +130,43 @@ conflito de sincronização — no máximo evento repetido, que o servidor desca
 
 ## 13. Restrições do evento (Hack Brasil 2026)
 
+**Fontes (verificadas em 2026-11-27):** [Regulamento](https://hackbrasil.com/regulamento) ·
+[Termos de uso](https://hackbrasil.com/termos) (atualizados em 02/11/2026) ·
+[Política de privacidade](https://hackbrasil.com/privacidade) (atualizada em 03/11/2026).
+Operadora: AI TECH SPACE LLC, sociedade de Delaware, EUA. Comissão Organizadora: Nicolas
+Silberstein Camara, Nicole Grossmann e Matheus Pagani (item 1.2). Contato: `oi@hackbrasil.com`.
+Leis aplicáveis: Estado de Delaware (Regulamento item 14.2, Privacidade item 8).
+
 | Item do regulamento | Regra que afeta o projeto |
 |---|---|
+| 1.3 | Concurso exclusivamente cultural (Lei 5.768/1971, art. 3º, II); dados dos participantes não são vendidos nem cedidos para fins comerciais |
+| 4.1 | Times de 1 a 4 integrantes, um único time e uma única submissão por pessoa — SIGNAL é solo |
+| 5.2 | Trilha Acesso à educação: o app ajuda crianças a aprender e professores a ensinar; fora da trilha ficam assistentes de uso geral sem foco em aprendizado e ferramentas para colar em provas |
 | 6.1 | Repositório criado depois de 04/11 21h, sem fork e sem histórico importado |
 | 6.2 | Nenhum código anterior não público; nada copiado de outros repositórios do time |
+| 6.3 | Escolha de tecnologia livre; nenhuma ferramenta de patrocinador é exigida, e o peso da tecnologia entra só no critério de implementação (9.1) |
+| 6.4 | Ferramentas de IA são permitidas e recomendadas |
 | 6.6 | Licença não pode impedir o júri de ler e executar: MIT |
 | 6.7 | Repositório público até 15/12 no mínimo |
 | 6.8 | Proibido conteúdo adulto, violência gráfica, gore, discurso de ódio — o app é **contra** esses temas e não descreve violência |
 | 6.9 | Demo sem dados pessoais reais de terceiros |
-| 7.1 | Vale o último commit enviado até 30/11 23h59 |
-| 7.2 | Vídeo de até 3 min sem login; demo no ar; aceite do regulamento |
+| 7.1 | Vale a última versão enviada até 30/11 23h59; só contam os commits do repositório até esse horário |
+| 7.2 | Submissão exige nome, descrição, trilha, links de repositório e demo, vídeo de até 3 min sem login (pt ou en, item 9.8), **aceite do Regulamento e autorização de compartilhamento dos dados do time e do projeto (item 13.1)** — sem isso a submissão não é enviada |
 | 7.3 | Demo precisa continuar no ar durante a avaliação |
-| 8.4 | Depois de 30/11 23h59, commit no repositório entregue pode desclassificar |
-| 9.1 | Quatro critérios de peso igual: execução, implementação, impacto, comunicação |
+| 7.4 | Jurados não são obrigados a instalar nem executar o projeto; podem avaliar por código, demo e vídeo — README precisa bastar para entender e rodar |
+| 8.1 | Finalistas: 5 projetos elegíveis mais bem avaliados por trilha, com nota mínima de 20/40 (item 9.4); vagas podem migrar entre trilhas |
+| 8.4 | Entre 30/11 23h59 e a final (12/12, São Paulo) os repositórios ficam **congelados**: sem commits nem mudança de código; o desenvolvimento retoma no local da final. Commit no período congelado pode desclassificar |
+| 9.1 | Quatro critérios de peso igual, nota 0–10 cada, total 0–40: execução, implementação, impacto, comunicação |
+| 9.4 | Nota mínima de 20/40 na fase online para ir à final |
+| 11.1 | Propriedade intelectual do projeto pertence ao time; à Realizadora e aos parceiros cabe só licença para exibir nome, descrição, imagens, vídeo e link na divulgação (11.2) |
+| 13.1 | Ao submeter, o time autoriza: jurados e mentores recebem a submissão e os contatos; patrocinadores e parceiros recebem os dados do projeto; o patrocinador do prêmio recebe nome e e-mail dos integrantes só para entregar o prêmio |
+| 13.2 | Nome e e-mail só são compartilhados para contato pós-hackathon com autorização opcional no painel; não afeta avaliação e pode ser retirada |
+| 13.3 | Participar autoriza, sem custo, uso de nome, imagem e voz captados em encontros, livestreams e final para divulgação; quem não quiser aparecer avisa no local — relevante para o vídeo com o integrante na câmera |
+
+**Privacidade: dois planos, não confundir.** A Política de Privacidade da organização
+(03/11/2026) trata dos dados do **time na inscrição e na submissão** (LGPD/GDPR, direitos
+no item 5, compartilhamento com patrocinadores e prestadores no item 4, processamento
+automatizado/IA no item 1.4). O **app Mosaico** não coleta dado pessoal de criança nenhuma:
+política de dados no §9 e ADR-0004 (zero dados pessoais por desenho). Nenhuma tela do app
+promete nem reproduz os Termos de Uso ou a Política do Hack Brasil; a referência legal do
+app é a curadoria de conteúdo (fontes BNCC/ECA/MEC por carta, §8).

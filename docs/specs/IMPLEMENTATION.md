@@ -313,5 +313,5 @@ verificação (`V5`), não de escrita.
 - **Não adicionar login, nome, foto, upload, chat ou ranking.** Contraria o ADR-0004 e o item 6.9 do
   regulamento.
 - **Não chamar LLM em tempo de execução.** O conteúdo é estático e revisado.
-- **Não commitar depois de 2026-11-30 23h59** no repositório entregue (item 8.4 do regulamento).
+- **Não commitar no período congelado** (de 2026-11-30 23h59 até a final, em 12/12): commit nesse intervalo pode desclassificar (item 8.4 do regulamento).
 - **Não tornar o repositório privado antes de 2026-12-15** (item 6.7).
