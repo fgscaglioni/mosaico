@@ -9,13 +9,13 @@ Ordem: esquema antes do conteúdo, conteúdo antes da tela. Sem migration: este 
 
 - [ ] `src/lib/content.ts` (novo): `CardSchema` e `CatalogSchema` em `zod`, export de `catalog`,
   `cardsOf(theme)` e `cardById(id)`. Depende de `content/cards.pt-BR.json`. (R2)
-- [ ] `tests/cartas.test.ts` (novo): `catalogo_tem_vinte_cartas` e `toda_carta_passa_no_esquema`. (V1, V2)
+- [ ] `tests/cartas.test.ts` (novo): `catalogo_tem_oitenta_cartas` e `toda_carta_passa_no_esquema`. (V1, V2)
 - [ ] `tests/cartas.test.ts`: `carta_sem_fonte_reprova` e `carta_com_termo_proibido_reprova`, com
   fixtures inline inválidas e `expect(() => CatalogSchema.parse(...)).toThrow()`. (V3)
 
 ## Fase 2 - conteúdo
 
-- [ ] `content/cards.pt-BR.json` (existente): conferir as 20 cartas contra a rubrica do `PROJECT.md`
+- [ ] `content/cards.pt-BR.json` (existente): conferir as 80 cartas contra a rubrica do `PROJECT.md`
   §8 e corrigir o que não passar. Não escrever carta nova sem ordem do dono. (R1, R5)
 - [ ] `content/cards.pt-BR.json`: `review_status` de cada carta passa a `revisado` depois da leitura
   humana; nenhuma carta fica em `rascunho` na entrega. (R2)
@@ -29,5 +29,5 @@ Ordem: esquema antes do conteúdo, conteúdo antes da tela. Sem migration: este 
 
 ## Verificação no ambiente real
 
-- [ ] `npm run dev`, abrir `#/` e confirmar 4 temas com 5 cartas cada na contagem exibida. (V1)
+- [ ] `npm run dev`, abrir `#/` e confirmar 4 temas com 20 cartas cada na contagem exibida. (V1)
 - [ ] `grep -c '"review_status": "rascunho"' content/cards.pt-BR.json` devolve `0`. (R2)

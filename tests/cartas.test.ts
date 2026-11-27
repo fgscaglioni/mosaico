@@ -2,11 +2,11 @@ import { describe, it, expect } from "vitest";
 import { CatalogSchema, CardSchema, catalog, validateAnswerIndex, TERMOS_PROIBIDOS, contemTermoProibido } from "../src/lib/content";
 
 describe("catálogo de cartas", () => {
-  it("catalogo_tem_vinte_cartas (V1)", () => {
-    expect(catalog.cards).toHaveLength(20);
+  it("catalogo_tem_oitenta_cartas (V1)", () => {
+    expect(catalog.cards).toHaveLength(80);
     const temas = ["bullying", "racismo", "xenofobia", "genero"] as const;
     for (const tema of temas) {
-      expect(catalog.cards.filter((c) => c.theme === tema)).toHaveLength(5);
+      expect(catalog.cards.filter((c) => c.theme === tema)).toHaveLength(20);
     }
   });
 

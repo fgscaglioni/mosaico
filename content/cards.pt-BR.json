@@ -1,5 +1,5 @@
 {
-  "catalog_version": 1,
+  "catalog_version": 2,
   "cards": [
     {
       "id": "bullying-01",
@@ -339,6 +339,1026 @@
       "answer_index": 1,
       "explanation": "Carinho não pode ser obrigatório. Dizer 'não' não é ofensa: é limite. O Estatuto da Criança e do Adolescente protege o direito de dizer não.",
       "source": "ECA, art. 18",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-06",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Reconhecer exclusão repetida como forma de intimidação",
+      "stem": "Todos os dias no recreio, o mesmo grupo finge que um colega não existe. Isso é:",
+      "options": [
+        "Um jogo que todo mundo gosta",
+        "Uma forma de intimidação repetida",
+        "Um mal-entendido de um dia só",
+        "Uma brincadeira que para sozinha"
+      ],
+      "answer_index": 1,
+      "explanation": "Quando a exclusão se repete e machuca, é intimidação sistemática. Quem vê pode chamar um adulto de confiança e não participar da exclusão.",
+      "source": "Lei 13.185/2015, art. 2º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-07",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Saber que apelido que humilha também é bullying",
+      "stem": "Um apelido que um colega odeia continua sendo usado mesmo depois que ele pede para parar. Isso é:",
+      "options": [
+        "Um apelido carinhoso",
+        "Uma forma de intimidação que deve parar",
+        "Um elogio disfarçado",
+        "Algo sem importância"
+      ],
+      "answer_index": 1,
+      "explanation": "Apelido que humilha e continua depois do pedido para parar é intimidação. A resposta é dizer não, procurar um adulto e pedir ajuda para o apelido parar.",
+      "source": "Lei 13.185/2015, art. 2º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-08",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Identificar intimidação virtual e saber o que fazer",
+      "stem": "Uma foto sua foi compartilhada para rirem da sua cara sem a sua permissão. O que fazer?",
+      "options": [
+        "Apagar a mensagem e não contar para ninguém",
+        "Salvar as evidências e avisar um adulto de confiança",
+        "Responder com uma foto pior da outra pessoa",
+        "Ignorar e esperar passar"
+      ],
+      "answer_index": 1,
+      "explanation": "Intimidação pela internet também machuca e também é bullying. Guarde as evidências, não responda com mais humilhação e avise um adulto de confiança.",
+      "source": "Lei 13.185/2015, art. 2º, parágrafo único",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-09",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Distinguir desentendimento de intimidação repetida",
+      "stem": "Você e um colega discordaram uma vez sobre um jogo e depois fizeram as pazes. Isso foi:",
+      "options": [
+        "Bullying",
+        "Um desentendimento que se resolveu",
+        "Uma intimidação sistemática",
+        "Uma exclusão repetida"
+      ],
+      "answer_index": 1,
+      "explanation": "Desentendimento acontece e se resolve com conversa e desculpas. Bullying é repetido, com intenção de machucar e com diferença de força. Nem todo conflito é bullying.",
+      "source": "Lei 13.185/2015, art. 2º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-10",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Saber que rir junto da humilhação também machuca",
+      "stem": "A turma ri quando um colega tropeça e cai no pátio. Rir junto ajuda ou machuca?",
+      "options": [
+        "Ajuda, porque rir alivia",
+        "Machuca, porque reforça a humilhação",
+        "Não faz diferença",
+        "Ajuda se for no recreio"
+      ],
+      "answer_index": 1,
+      "explanation": "Rir da humilhação de alguém reforça a intimidação. Quem quer ajudar desvia a atenção, oferece ajuda e chama um adulto quando a piada continua.",
+      "source": "Lei 13.185/2015, art. 4º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-11",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Reconhecer que empurrar e ameaçar também é intimidação",
+      "stem": "Um colega mais forte empurra os menores na fila todos os dias e diz que eles não valem nada. Isso é:",
+      "options": [
+        "Um jeito de entrar na fila",
+        "Uma intimidação que precisa de ajuda de um adulto",
+        "Uma brincadeira de força",
+        "Um esporte"
+      ],
+      "answer_index": 1,
+      "explanation": "Empurrar e ameaçar repetidamente é intimidação e pode machucar o corpo e os sentimentos. A resposta é sair da cena, procurar um adulto e contar o que aconteceu.",
+      "source": "Lei 13.185/2015, art. 2º; ECA, art. 18",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-12",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Saber que a vítima não tem culpa da intimidação",
+      "stem": "Um colega diz que a vítima é culpada porque é diferente dos outros. Quem tem culpa da intimidação?",
+      "options": [
+        "A vítima, por ser diferente",
+        "Quem intimida, porque escolhe machucar",
+        "A turma inteira, sempre",
+        "Ninguém, acontece sozinho"
+      ],
+      "answer_index": 1,
+      "explanation": "Ser diferente nunca é culpa. A culpa é de quem escolhe intimidar. A escola e os adultos têm o dever de proteger quem sofre intimidação.",
+      "source": "Lei 13.185/2015, art. 4º; Constituição Federal, art. 5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-13",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Identificar pedido de segredo que esconde intimidação",
+      "stem": "Um colega manda você esconder que ele está intimidando outro aluno. O que fazer?",
+      "options": [
+        "Guardar o segredo para não se meter",
+        "Contar a um adulto, porque segredo que machuca não se guarda",
+        "Espalhar o segredo para a turma toda",
+        "Esperar a intimidação parar sozinha"
+      ],
+      "answer_index": 1,
+      "explanation": "Segredo que esconde intimidação protege quem intimida. Contar a um adulto de confiança é a forma certa de ajudar a vítima e interromper a intimidação.",
+      "source": "Lei 13.185/2015, art. 4º, VIII",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-14",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Reconhecer que intimidação acontece também em grupo de mensagens",
+      "stem": "No grupo de mensagens da turma, um colega é chamado de nomes feios todos os dias. Isso é:",
+      "options": [
+        "Uma conversa normal",
+        "Intimidação que também acontece pela internet",
+        "Um jogo de palavras",
+        "Uma forma de fazer amigos"
+      ],
+      "answer_index": 1,
+      "explanation": "A intimidação pela internet continua sendo intimidação, mesmo sem estar no mesmo lugar. Quem vê pode sair do grupo, guardar evidências e avisar um adulto.",
+      "source": "Lei 13.185/2015, art. 2º, parágrafo único",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-15",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Saber como defender-se sem revidar com mais intimidação",
+      "stem": "Alguém te intimida e você quer se defender. Qual atitude ajuda?",
+      "options": [
+        "Revidas com uma intimidação maior",
+        "Sai da cena, procura um adulto e conta o que aconteceu",
+        "Descounta em outro colega",
+        "Esconde o que aconteceu para sempre"
+      ],
+      "answer_index": 1,
+      "explanation": "Revidar com mais intimidação só aumenta o problema. Sair da cena, procurar um adulto e contar o que aconteceu protege você e interrompe a intimidação.",
+      "source": "Lei 13.185/2015, art. 4º; ECA, art. 18",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-16",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Reconhecer intimidação por causa da aparência",
+      "stem": "Um colega é chamado de nomes por causa do peso e do tipo de cabelo todos os dias. Isso é:",
+      "options": [
+        "Uma opinião sincera",
+        "Intimidação que machuca e precisa parar",
+        "Uma brincadeira entre amigos",
+        "Um elogio"
+      ],
+      "answer_index": 1,
+      "explanation": "Intimidação por causa da aparência machuca e é bullying. Ninguém escolhe o corpo que tem, e a escola deve proteger quem sofre esse tipo de intimidação.",
+      "source": "Lei 13.185/2015, art. 2º; Constituição Federal, art. 5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-17",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Distinguir cobrança de tarefa de intimidação",
+      "stem": "Um colega cobra você para terminar um trabalho em grupo que ficou para amanhã. Isso é:",
+      "options": [
+        "Bullying",
+        "Uma cobrança normal entre colegas",
+        "Intimidação sistemática",
+        "Exclusão"
+      ],
+      "answer_index": 1,
+      "explanation": "Cobrar um trabalho em grupo é parte da convivência e se resolve com conversa. Bullying é repetido, machuca e busca humilhar. Nem toda cobrança é intimidação.",
+      "source": "Lei 13.185/2015, art. 2º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-18",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Saber que pedir desculpas é parte de resolver conflitos",
+      "stem": "Você percebeu que uma piada sua machucou um colega. Qual atitude é a melhor?",
+      "options": [
+        "Rir mais alto para disfarçar",
+        "Pedir desculpas e parar com a piada",
+        "Dizer que foi só uma brincadeira e continuar",
+        "Culpar o colega por ser sensível demais"
+      ],
+      "answer_index": 1,
+      "explanation": "Reconhecer que machucou e pedir desculpas é o caminho para resolver conflitos. Continuar com a piada depois de saber que machuca transforma brincadeira em intimidação.",
+      "source": "Lei 13.185/2015, art. 4º; BNCC, Educação em Direitos Humanos",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-19",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Reconhecer intimidação contra alunos novos",
+      "stem": "Um aluno novo é chamado de nomes e deixado de fora de todos os jogos. Isso é:",
+      "options": [
+        "Uma recepção normal",
+        "Intimidação que precisa de ajuda",
+        "Um costume da turma",
+        "Um teste de coragem"
+      ],
+      "answer_index": 1,
+      "explanation": "Aluno novo precisa ser acolhido, não intimidado. Exclusão e nomes repetidos são intimidação, e acolher é o contrário disso: chamar para jogar e apresentar a turma.",
+      "source": "Lei 13.185/2015, art. 4º; ECA, art. 18",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "bullying-20",
+      "theme": "bullying",
+      "age_band": "8-11",
+      "objective": "Saber que intimidação também acontece fora da escola",
+      "stem": "Um colega é intimidado no bairro por um grupo mais velho. O que ajuda?",
+      "options": [
+        "Nada, porque é fora da escola",
+        "Contar a um adulto de confiança e não participar da intimidação",
+        "Entrar para o grupo mais velho",
+        "Ignorar, porque não é problema seu"
+      ],
+      "answer_index": 1,
+      "explanation": "Intimidação acontece em vários lugares, não só na escola. Contar a um adulto de confiança e não participar protege a vítima e pode interromper a intimidação.",
+      "source": "Lei 13.185/2015, art. 4º; ECA, art. 18",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-06",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer piada racista como preconceito",
+      "stem": "Uma piada compara a cor da pele de um colega com sujeira. Essa piada é:",
+      "options": [
+        "Uma piada sem problema",
+        "Um preconceito que machuca e deve parar",
+        "Um elogio",
+        "Uma brincadeira de carnaval"
+      ],
+      "answer_index": 1,
+      "explanation": "Piada que usa a cor da pele para humilhar é preconceito. A resposta é não rir, dizer que machuca e procurar um adulto de confiança.",
+      "source": "Lei 7.716/1989",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-07",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Valorizar a beleza de diferentes tipos de cabelo",
+      "stem": "Um colega diz que só existe um tipo de cabelo bonito. O que está errado nessa ideia?",
+      "options": [
+        "Nada, cada um tem sua opinião",
+        "Todos os tipos de cabelo são bonitos e merecem respeito",
+        "Só o cabelo liso é arrumado",
+        "Só o cabelo curto é bonito"
+      ],
+      "answer_index": 1,
+      "explanation": "Cabelos diferentes são bonitos de jeitos diferentes. Dizer que um só é bonito desrespeita quem tem outro tipo, e respeitar é valorizar cada pessoa como ela é.",
+      "source": "Lei 10.639/2003; Constituição Federal, art. 5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-08",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer a história africana como parte do Brasil",
+      "stem": "Na feira de ciências, um colega diz que a história do Brasil não tem nada de africana. O que falta nessa frase?",
+      "options": [
+        "Nada, está completa",
+        "A história africana é parte fundamental da história do Brasil",
+        "A história brasileira é só indígena",
+        "A história brasileira é só europeia"
+      ],
+      "answer_index": 1,
+      "explanation": "A história do Brasil é feita de povos africanos, indígenas e europeus. Aprender a história africana ajuda a entender o país e respeitar todas as pessoas.",
+      "source": "Lei 10.639/2003",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-09",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Identificar exclusão por cor como preconceito",
+      "stem": "Um colega só escolhe para o time quem tem a mesma cor de pele que ele. Isso é:",
+      "options": [
+        "Uma preferência normal de time",
+        "Preconceito que exclui e machuca",
+        "Um critério de habilidade",
+        "Uma regra do jogo"
+      ],
+      "answer_index": 1,
+      "explanation": "Escolher o time pela cor da pele é preconceito e exclui quem fica de fora. Times se escolhem por vontade de jogar e por habilidade, nunca pela cor.",
+      "source": "Lei 7.716/1989; Constituição Federal, art. 5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-10",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer que insulto por cor é crime e machuca",
+      "stem": "Um colega chama outro de nomes por causa da cor da pele na frente da turma. Isso é:",
+      "options": [
+        "Uma discussão normal",
+        "Um insulto racista que machuca e é crime",
+        "Uma piada entre amigos",
+        "Um elogio mal falado"
+      ],
+      "answer_index": 1,
+      "explanation": "Insultar alguém por causa da cor é racismo e é crime no Brasil. A resposta é não participar, apoiar quem foi insultado e contar a um adulto.",
+      "source": "Lei 7.716/1989, art. 20",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-11",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Valorizar referências negras em livros e histórias",
+      "stem": "Você pode escolher um livro para a turma. Qual escolha valoriza a história afro-brasileira?",
+      "options": [
+        "Um livro que só mostra um grupo de pessoas",
+        "Um livro com personagens negros em papéis de destaque",
+        "Um livro sem nenhuma pessoa",
+        "Um livro que mostra um grupo como inferior"
+      ],
+      "answer_index": 1,
+      "explanation": "Livros com personagens negros em papéis de destaque mostram que a cultura afro-brasileira é parte do Brasil. Escolher esses livros valoriza a história de todos.",
+      "source": "Lei 10.639/2003",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-12",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer que tom de pele não define capacidade",
+      "stem": "Um colega diz que crianças de pele escura não podem ser líderes da turma. O que está errado?",
+      "options": [
+        "Nada, líderes nascem prontos",
+        "Tom de pele não define capacidade nem direito de liderar",
+        "Só crianças de pele clara lideram",
+        "Liderança é só para adultos"
+      ],
+      "answer_index": 1,
+      "explanation": "Capacidade e liderança não têm cor. Dizer que um grupo não pode liderar é preconceito, e todas as crianças têm o mesmo direito de participar e liderar.",
+      "source": "Constituição Federal, art. 5º; Lei 7.716/1989",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-13",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Identificar preconceito em desenho e brincadeira",
+      "stem": "Num desenho de um colega, só as crianças de pele clara aparecem como felizes e amigas. O que esse desenho mostra?",
+      "options": [
+        "Um desenho perfeito",
+        "Um preconceito que associa felicidade a uma só cor",
+        "Um retrato da turma",
+        "Um desenho sem mensagem"
+      ],
+      "answer_index": 1,
+      "explanation": "Desenhos que ligam felicidade e amizade a uma só cor ensinam preconceito sem palavras. Representar todas as cores como felizes e amigas é o contrário disso.",
+      "source": "Lei 10.639/2003; BNCC, Educação em Direitos Humanos",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-14",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer religião de matriz africana como digna de respeito",
+      "stem": "Um colega zomba da roupa branca de uma festa de religião de matriz africana. Isso é:",
+      "options": [
+        "Uma opinião sobre roupa",
+        "Desrespeito religioso que também é preconceito",
+        "Uma piada normal",
+        "Uma pergunta curiosa"
+      ],
+      "answer_index": 1,
+      "explanation": "Zombar da religião de alguém é desrespeito e pode ser preconceito. Todas as religiões merecem respeito, e a lei protege a liberdade de crença de cada pessoa.",
+      "source": "Constituição Federal, art. 5º, VI; Lei 7.716/1989",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-15",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Saber que comparar pessoas a animais por causa da cor é racismo",
+      "stem": "Um colega compara um menino negro a um animal por causa da cor da pele. Isso é:",
+      "options": [
+        "Uma comparação engraçada",
+        "Racismo, porque desumaniza e humilha",
+        "Um apelido sem importância",
+        "Um elogio"
+      ],
+      "answer_index": 1,
+      "explanation": "Comparar pessoas a animais por causa da cor é racismo, porque nega que a pessoa é humana e digna. A resposta é não rir e procurar um adulto.",
+      "source": "Lei 7.716/1989, art. 20",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-16",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Valorizar comidas e festas de origem africana",
+      "stem": "Na festa da escola, um colega diz que comida de origem africana não é comida de verdade. O que está errado?",
+      "options": [
+        "Nada, festa tem comida de verdade",
+        "Comidas de origem africana são parte da cultura brasileira",
+        "Só comida europeia é de verdade",
+        "Comida boa é só a de um país"
+      ],
+      "answer_index": 1,
+      "explanation": "Muitas comidas do Brasil têm origem africana e são parte da cultura do país. Valorizar essas comidas é valorizar a história de quem as criou.",
+      "source": "Lei 10.639/2003",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-17",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer que todos têm o mesmo direito de brincar",
+      "stem": "Um colega diz que o parquinho é só para crianças de uma cor. Isso é:",
+      "options": [
+        "Uma regra do parquinho",
+        "Preconceito, porque brincar é direito de todas as crianças",
+        "Uma fila normal",
+        "Um cuidado com o brinquedo"
+      ],
+      "answer_index": 1,
+      "explanation": "Brincar é direito de todas as crianças, sem exceção de cor. Dizer que um lugar é só de uma cor é preconceito, e os adultos devem garantir o direito de todos.",
+      "source": "ECA, art. 16; Constituição Federal, art. 5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-18",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Identificar preconceito em apelido sobre cor",
+      "stem": "Um apelido sobre a cor da pele de um colega é usado mesmo depois que ele pede para parar. Isso é:",
+      "options": [
+        "Um apelido carinhoso",
+        "Preconceito que continua mesmo contra a vontade da pessoa",
+        "Um nome de time",
+        "Uma brincadeira aprovada"
+      ],
+      "answer_index": 1,
+      "explanation": "Apelido sobre a cor que continua depois do pedido para parar é preconceito. Respeitar é parar quando a pessoa pede, e procurar um adulto se continuar.",
+      "source": "Lei 7.716/1989; Lei 13.185/2015, art. 2º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-19",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Reconhecer a capoeira e a música africana como cultura brasileira",
+      "stem": "Um colega diz que capoeira não é cultura. O que falta nessa frase?",
+      "options": [
+        "Nada, está completa",
+        "Capoeira e música de origem africana são cultura brasileira",
+        "Cultura brasileira é só música sertaneja",
+        "Cultura brasileira é só teatro europeu"
+      ],
+      "answer_index": 1,
+      "explanation": "Capoeira, música e danças de origem africana são parte viva da cultura brasileira. Conhecer essa cultura ajuda a respeitar quem a cria e a pratica.",
+      "source": "Lei 10.639/2003",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "racismo-20",
+      "theme": "racismo",
+      "age_band": "8-11",
+      "objective": "Saber que igualdade de direitos vale para todas as cores",
+      "stem": "Um colega diz que os direitos são diferentes para cada cor de pele. O que a Constituição diz?",
+      "options": [
+        "Que os direitos são diferentes",
+        "Que todas as pessoas são iguais em direitos, sem diferença de cor",
+        "Que os direitos são só para adultos",
+        "Que os direitos dependem da turma"
+      ],
+      "answer_index": 1,
+      "explanation": "A Constituição diz que todas as pessoas são iguais em direitos, sem diferença de cor, raça ou origem. Aproveitar esse direito é dever de todos.",
+      "source": "Constituição Federal, art. 5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-06",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Acolher colega que fala outra língua",
+      "stem": "Uma colega chegou do Peru e ainda não fala português bem. O que mais acolhe?",
+      "options": [
+        "Falar mais alto e mais rápido com ela",
+        "Aprender palavras novas com ela e convidar para brincar",
+        "Ignorar, porque ela vai aprender sozinha",
+        "Dar um apelido para o sotaque dela"
+      ],
+      "answer_index": 1,
+      "explanation": "Acolher é aprender junto: palavras novas, gestos e convites para brincar. Quem chega de outro país precisa de paciência e amizade, não de pressa.",
+      "source": "BNCC, Educação em Direitos Humanos (MEC, 2019)",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-07",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Reconhecer zombaria com comida de outro país",
+      "stem": "Um colega ri da comida que outro aluno trouxe de casa porque é de outro país. Isso é:",
+      "options": [
+        "Uma opinião sobre comida",
+        "Preconceito contra quem veio de outro país",
+        "Uma piada saudável",
+        "Uma pergunta sobre pedidos"
+      ],
+      "answer_index": 1,
+      "explanation": "Comida de outro país é parte da cultura de quem a traz. Rir dessa comida é preconceito, e provar com respeito é uma forma de amizade.",
+      "source": "Constituição Federal, art. 3º, IV",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-08",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Identificar que origem geográfica não define valor",
+      "stem": "Um colega diz que crianças de um país são melhores que as de outro. O que está errado?",
+      "options": [
+        "Nada, cada país tem seu ranking",
+        "Nenhum país é melhor que outro: todas as crianças têm o mesmo valor",
+        "Só crianças de países ricos valem mais",
+        "Só crianças do Brasil valem mais"
+      ],
+      "answer_index": 1,
+      "explanation": "Nenhuma criança vale mais que outra por causa do país de origem. O Brasil deve promover o bem de todos, sem preconceito de origem.",
+      "source": "Constituição Federal, art. 3º, IV",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-09",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Acolher família refugiada na escola",
+      "stem": "Uma família refugiada chega à sua cidade e os filhos entram na sua escola. Qual atitude acolhe?",
+      "options": [
+        "Perguntar de onde vieram e por que fugiram, com curiosidade",
+        "Apresentar a escola, os colegas e os lugares com calma",
+        "Exigir que contem tudo o que viveram",
+        "Tratar como diferentes para sempre"
+      ],
+      "answer_index": 1,
+      "explanation": "Famílias refugiadas viveram situações difíceis e merecem acolhimento, não curiosidade sobre o sofrimento. Apresentar a escola e os colegas com calma é acolher.",
+      "source": "Lei 9.474/1997 (Estatuto dos Refugiados)",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-10",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Reconhecer que sotaque não é motivo de piada",
+      "stem": "Um colega imita o jeito de falar de outro aluno e a turma ri. Isso é:",
+      "options": [
+        "Uma imitação engraçada",
+        "Preconceito contra quem fala de outro jeito",
+        "Uma aula de pronúncia",
+        "Um jogo de voz"
+      ],
+      "answer_index": 1,
+      "explanation": "Imitar o sotaque de alguém para fazer a turma rir é preconceito. Cada jeito de falar é parte da história de cada pessoa e merece respeito.",
+      "source": "Constituição Federal, art. 3º, IV; BNCC, Educação em Direitos Humanos",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-11",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Reconhecer preconceito contra nordestinos como xenofobia",
+      "stem": "Um colega diz que todo nordestino é preguiçoso. Isso é:",
+      "options": [
+        "Um fato sobre o Nordeste",
+        "Preconceito contra quem nasceu em outra região do Brasil",
+        "Uma opinião sobre trabalho",
+        "Uma piada regional"
+      ],
+      "answer_index": 1,
+      "explanation": "Generalizar sobre quem nasceu em outra região é preconceito, mesmo dentro do mesmo país. Pessoas de todas as regiões trabalham e estudam como qualquer outra.",
+      "source": "Constituição Federal, art. 3º, IV; Lei 7.716/1989",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-12",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Valorizar festas e músicas de outros países",
+      "stem": "Na aula de música, um colega diz que só música brasileira é boa. O que está errado?",
+      "options": [
+        "Nada, cada um gosta do que gosta de verdade",
+        "Músicas de outros países também são cultura e merecem respeito",
+        "Só música europeia é boa",
+        "Só música antiga é boa"
+      ],
+      "answer_index": 1,
+      "explanation": "Músicas de outros países são cultura de outros povos e merecem respeito. Conhecer músicas diferentes abre a cabeça e ajuda a conviver com quem veio de longe.",
+      "source": "BNCC, Educação em Direitos Humanos (MEC, 2019)",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-13",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Identificar exclusão de aluno estrangeiro",
+      "stem": "Um aluno novo de outro país fica sempre sozinho porque ninguém fala com ele. Isso é:",
+      "options": [
+        "Uma escolha dele",
+        "Exclusão que também é preconceito e precisa de ajuda",
+        "Um costume da turma",
+        "Um problema de idioma sem solução"
+      ],
+      "answer_index": 1,
+      "explanation": "Deixar um aluno estrangeiro sempre sozinho é exclusão e preconceito. Chamar para brincar, ajudar com palavras e apresentar os colegas muda a chegada dele.",
+      "source": "ECA, art. 18; Constituição Federal, art. 3º, IV",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-14",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Reconhecer que nome de outro país merece respeito",
+      "stem": "Um colega chama outro pelo país de origem em vez do nome dele. Isso é:",
+      "options": [
+        "Um apelido prático",
+        "Desrespeito, porque cada pessoa tem seu nome",
+        "Uma forma de apresentação",
+        "Um elogio"
+      ],
+      "answer_index": 1,
+      "explanation": "Chamar alguém pelo país em vez do nome apaga quem a pessoa é. Perguntar o nome e chamá-la pelo nome é o começo do respeito.",
+      "source": "Constituição Federal, art. 5º; ECA, art. 18",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-15",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Saber que migrar não é motivo de vergonha",
+      "stem": "Um colega esconde que a família veio de outro país com vergonha. O que ajuda?",
+      "options": [
+        "Confirmar que ele deve ter vergonha",
+        "Mostrar que a história da família dele é parte da turma e merece orgulho",
+        "Perguntar por que ele esconde",
+        "Ignorar e deixar ele sozinho"
+      ],
+      "answer_index": 1,
+      "explanation": "Vir de outro país não é motivo de vergonha. Mostrar orgulho pela história de cada família ajuda quem chegou a se sentir parte da turma.",
+      "source": "Lei 9.474/1997; BNCC, Educação em Direitos Humanos",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-16",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Reconhecer preconceito em desenho sobre estrangeiros",
+      "stem": "Num desenho, só as crianças do Brasil aparecem como boas e amigas. O que esse desenho mostra?",
+      "options": [
+        "Um desenho sem mensagem",
+        "Um preconceito que separa crianças por país de origem",
+        "Um retrato da turma",
+        "Um desenho sobre amizade"
+      ],
+      "answer_index": 1,
+      "explanation": "Desenhos que separam crianças boas e amigas por país ensinam preconceito. Representar crianças de todos os países como amigas é o contrário disso.",
+      "source": "BNCC, Educação em Direitos Humanos (MEC, 2019)",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-17",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Valorizar comidas e festas de várias origens",
+      "stem": "Na festa junina da escola, um colega diz que só comida brasileira é de verdade. O que falta nessa frase?",
+      "options": [
+        "Nada, está completa",
+        "Comidas de várias origens fazem parte das festas e da cultura",
+        "Só comida europeia é de verdade",
+        "Só doce é comida de festa"
+      ],
+      "answer_index": 1,
+      "explanation": "Festas brasileiras misturam comidas de várias origens, e cada uma conta uma história. Valorizar todas as origens enriquece a festa e a turma.",
+      "source": "BNCC, Educação em Direitos Humanos (MEC, 2019)",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-18",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Identificar que língua diferente não atrapalha amizade",
+      "stem": "Um colega diz que não pode ser amigo de quem fala outra língua. O que está errado?",
+      "options": [
+        "Nada, amizade exige a mesma língua",
+        "Amizade nasce de gestos, paciência e vontade de aprender junto",
+        "Só quem fala igual pode brincar junto",
+        "Amizade é só entre vizinhos"
+      ],
+      "answer_index": 1,
+      "explanation": "Amizade não exige a mesma língua: gestos, paciência e vontade de aprender palavras novas constroem amizade entre quem fala línguas diferentes.",
+      "source": "BNCC, Educação em Direitos Humanos (MEC, 2019)",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-19",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Reconhecer preconceito contra quem muda de cidade",
+      "stem": "Um colega de outra cidade é chamado de nomes por causa do jeito de falar. Isso é:",
+      "options": [
+        "Uma brincadeira regional",
+        "Preconceito contra quem veio de outro lugar",
+        "Um apelido carinhoso",
+        "Um teste de amizade"
+      ],
+      "answer_index": 1,
+      "explanation": "Zombar do jeito de falar de quem veio de outro lugar é preconceito, mesmo sendo de outra cidade. Cada jeito de falar conta uma história que merece respeito.",
+      "source": "Constituição Federal, art. 3º, IV",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "xenofobia-20",
+      "theme": "xenofobia",
+      "age_band": "8-11",
+      "objective": "Saber que o Brasil protege quem chega de outro país",
+      "stem": "Uma família chega ao Brasil fugindo de perigo no país de origem. O que o Brasil deve fazer?",
+      "options": [
+        "Devolver sem ouvir a família",
+        "Proteger e acolher quem busca segurança",
+        "Ignorar a família",
+        "Exigir que a família conte tudo"
+      ],
+      "answer_index": 1,
+      "explanation": "O Brasil protege quem chega fugindo de perigo, com lei própria para refugiados. Proteger e acolher é dever do país e da escola que recebe a família.",
+      "source": "Lei 9.474/1997 (Estatuto dos Refugiados)",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-06",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer que brincar não tem dono por sexo",
+      "stem": "Um colega diz que menino não pode brincar de boneca. O que está errado?",
+      "options": [
+        "Nada, cada brinquedo tem dono",
+        "Brincar é direito de todas as crianças, sem dono por sexo",
+        "Só menina brinca de boneca",
+        "Só menino brinca de bola"
+      ],
+      "answer_index": 1,
+      "explanation": "Brinquedos não têm dono por sexo: brincar de boneca, de bola ou de casinha é direito de todas as crianças. Escolher o brinquedo é liberdade de cada uma.",
+      "source": "Constituição Federal, art. 5º, I",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-07",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Saber que pedir ajuda é coragem, não fraqueza",
+      "stem": "Um adulto pede para você guardar segredo sobre algo que te deixou desconfortável. O que fazer?",
+      "options": [
+        "Guardar o segredo para proteger o adulto",
+        "Contar a um adulto de confiança, porque segredo que machuca não se guarda",
+        "Esperar passar sozinho",
+        "Trocar de escola"
+      ],
+      "answer_index": 1,
+      "explanation": "Nenhum adulto pode pedir segredo sobre algo que machuca. Contar a um adulto de confiança é coragem e é o jeito certo de se proteger.",
+      "source": "ECA, art. 18",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-08",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer que tarefas da casa são de todos",
+      "stem": "Um colega diz que lavar louça é só tarefa de menina. O que está errado?",
+      "options": [
+        "Nada, cada tarefa tem dono",
+        "Tarefas da casa são de todas as pessoas da casa",
+        "Só adulto lava louça",
+        "Só menina lava louça"
+      ],
+      "answer_index": 1,
+      "explanation": "Tarefas da casa são de todas as pessoas que moram na casa, sem dono por sexo. Dividir as tarefas é justo e ajuda a família inteira.",
+      "source": "Constituição Federal, art. 5º, I; art. 226, §5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-09",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Saber que meninas e meninos têm os mesmos direitos",
+      "stem": "Um colega diz que menina não pode ser médica. O que está errado?",
+      "options": [
+        "Nada, cada profissão tem dono",
+        "Meninas e meninos têm os mesmos direitos de estudar e trabalhar",
+        "Só menino estuda medicina",
+        "Só menina cuida de doentes"
+      ],
+      "answer_index": 1,
+      "explanation": "Meninas e meninos têm os mesmos direitos de estudar e escolher qualquer profissão. Dizer que uma profissão tem dono por sexo é preconceito.",
+      "source": "Constituição Federal, art. 5º, I",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-10",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Respeitar o não sobre o próprio corpo",
+      "stem": "Alguém insiste em te abraçar depois que você disse que não quer. O que vale?",
+      "options": [
+        "O abraço, porque é carinho",
+        "O seu não, porque o seu corpo é seu",
+        "A insistência da pessoa",
+        "A opinião da turma"
+      ],
+      "answer_index": 1,
+      "explanation": "O seu não sobre o seu corpo vale sempre, mesmo com quem você gosta. Respeitar o não é o começo de qualquer carinho de verdade.",
+      "source": "ECA, art. 18; Constituição Federal, art. 5º",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-11",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer que cabelo e roupa não definem sexo",
+      "stem": "Um colega diz que menino de cabelo comprido parece menina e deve cortar. O que está errado?",
+      "options": [
+        "Nada, cabelo define sexo",
+        "Cabelo e roupa são escolha de cada pessoa",
+        "Só menina tem cabelo comprido",
+        "Só menino corta o cabelo"
+      ],
+      "answer_index": 1,
+      "explanation": "Cabelo e roupa são escolha de cada pessoa e não definem quem ela é. Zombar da escolha de alguém é desrespeito.",
+      "source": "Constituição Federal, art. 5º, I",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-12",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Saber que escola é lugar de todos",
+      "stem": "Um colega diz que menina não deve ir à escola porque precisa cuidar da casa. O que está errado?",
+      "options": [
+        "Nada, cada um escolhe seu lugar",
+        "Ir à escola é direito de todas as crianças",
+        "Só menino estuda",
+        "Só menina cuida da casa"
+      ],
+      "answer_index": 1,
+      "explanation": "Ir à escola é direito de todas as crianças, meninas e meninos. A lei garante educação para todos, e estudar abre portas para o futuro de cada uma.",
+      "source": "ECA, art. 53; Constituição Federal, art. 208",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-13",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer que chorar não é fraqueza de menino",
+      "stem": "Um colega diz que menino não pode chorar. O que está errado?",
+      "options": [
+        "Nada, menino não chora",
+        "Chorar é sentimento de todas as pessoas, meninos e meninas",
+        "Só menina chora",
+        "Só menino finge que não sente"
+      ],
+      "answer_index": 1,
+      "explanation": "Chorar é sentimento de todas as pessoas. Dizer que menino não pode chorar ensina a esconder o que sente, e falar do que sente é saúde.",
+      "source": "ECA, art. 18; Lei 14.164/2021",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-14",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Saber que violência contra mulher é crime",
+      "stem": "Um colega diz que homem pode mandar na mulher porque ele é homem. O que está errado?",
+      "options": [
+        "Nada, cada um manda em casa",
+        "Ninguém manda em ninguém: homens e mulheres têm os mesmos direitos",
+        "Só homem decide em casa",
+        "Só mulher obedece em casa"
+      ],
+      "answer_index": 1,
+      "explanation": "Homens e mulheres têm os mesmos direitos, e ninguém manda em ninguém. A lei protege as mulheres contra qualquer forma de violência.",
+      "source": "Lei 14.164/2021; Constituição Federal, art. 5º, I",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-15",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer amizade entre meninos e meninas",
+      "stem": "Um colega diz que menino e menina não podem ser amigos. O que está errado?",
+      "options": [
+        "Nada, amizade tem regra de sexo",
+        "Meninos e meninas podem ser amigos como qualquer pessoa",
+        "Só menina é amiga de menina",
+        "Só menino é amigo de menino"
+      ],
+      "answer_index": 1,
+      "explanation": "Amizade não tem regra de sexo: meninos e meninas podem ser amigos, estudar e brincar juntos. Respeitar a amizade de todos é parte da convivência.",
+      "source": "Constituição Federal, art. 5º, I; BNCC, Educação em Direitos Humanos",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-16",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Saber que adulto não pode tocar onde não deve",
+      "stem": "Um adulto desconhecido quer te abraçar e tocar seu corpo sem você querer. O que fazer?",
+      "options": [
+        "Deixar, porque é adulto",
+        "Dizer não, sair de perto e contar a um adulto de confiança",
+        "Guardar segredo",
+        "Esperar acabar"
+      ],
+      "answer_index": 1,
+      "explanation": "Nenhum adulto pode tocar seu corpo sem você querer. Dizer não, sair de perto e contar a um adulto de confiança protege você.",
+      "source": "ECA, art. 18",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-17",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer que força não é privilégio de um sexo",
+      "stem": "Um colega diz que menina não pode carregar peso porque é frágil. O que está errado?",
+      "options": [
+        "Nada, cada um carrega o seu peso",
+        "Força e fragilidade variam de pessoa para pessoa, não por sexo",
+        "Só menino carrega peso",
+        "Só menina é frágil"
+      ],
+      "answer_index": 1,
+      "explanation": "Força e fragilidade variam de pessoa para pessoa, não por sexo. Dizer que um sexo é naturalmente frágil é preconceito que limita todo mundo.",
+      "source": "Constituição Federal, art. 5º, I",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-18",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Saber que Disque 100 recebe denúncias de violência",
+      "stem": "Você soube que uma criança está sofrendo violência em casa. Qual canal público pode ajudar?",
+      "options": [
+        "Nenhum, é assunto de família",
+        "Disque 100, que recebe denúncias de violações de direitos humanos",
+        "Só a polícia da cidade",
+        "Só o diretor da escola"
+      ],
+      "answer_index": 1,
+      "explanation": "O Disque 100 recebe denúncias de violações de direitos humanos, inclusive contra crianças. Contar ajuda a proteger quem sofre violência.",
+      "source": "Disque 100; ECA, art. 13",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-19",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Reconhecer que meninas também lideram",
+      "stem": "Um colega diz que a turma só pode ter líder menino. O que está errado?",
+      "options": [
+        "Nada, liderança tem dono",
+        "Meninas e meninos podem liderar",
+        "Só menino lidera",
+        "Só menina ajuda o líder"
+      ],
+      "answer_index": 1,
+      "explanation": "Meninas e meninos podem liderar, porque liderança é capacidade de cada pessoa. Dizer que um sexo lidera e o outro obedece é preconceito.",
+      "source": "Constituição Federal, art. 5º, I; Lei 14.164/2021",
+      "review_status": "rascunho"
+    },
+    {
+      "id": "genero-20",
+      "theme": "genero",
+      "age_band": "8-11",
+      "objective": "Saber que a escola previne violência contra a mulher",
+      "stem": "Por que a escola fala sobre respeito entre meninos e meninas?",
+      "options": [
+        "Para perder tempo de aula",
+        "Para ensinar respeito e prevenir violência desde cedo",
+        "Para separar meninos de meninas",
+        "Para falar de outro assunto"
+      ],
+      "answer_index": 1,
+      "explanation": "A escola ensina respeito entre meninos e meninas para prevenir violência desde cedo. Aprender a respeitar é parte da educação de todas as crianças.",
+      "source": "Lei 14.164/2021; BNCC, Temas Contemporâneos Transversais",
       "review_status": "rascunho"
     }
   ]

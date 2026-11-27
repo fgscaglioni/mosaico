@@ -41,7 +41,7 @@ formas de violência cotidiana, com conteúdo curado e progresso que sobrevive �
 
 | Item | Escopo |
 |---|---|
-| Conteúdo | 4 temas × 5 cartas = 20 cartas, cada uma com fonte, explicação e faixa etária |
+| Conteúdo | 4 temas × 20 cartas = 80 cartas, cada uma com fonte, explicação e faixa etária |
 | Gamificação | XP, nível, sequência de dias, 6 medalhas, álbum de peças por tema |
 | Offline | PWA instalável, funcional após o primeiro carregamento |
 | Sincronização | Log de eventos enviado quando a rede volta, com deduplicação |
@@ -72,7 +72,7 @@ Não são feature: são portas do evento, e nenhuma delas se prova com teste de 
 | Demo pública, sem login, no ar durante a avaliação (7.3) | `curl https://<host>/api/health` devolve `ok` |
 | Vídeo de até 3 minutos, acessível sem login (7.2) | link público, duração cronometrada |
 | Build reproduzível em container | `docker build && docker run`, health responde |
-| Conteúdo revisado por pessoa | `review_status: "revisado"` em todas as 20 cartas |
+| Conteúdo revisado por pessoa | `review_status: "revisado"` em todas as 80 cartas |
 
 ## 8. Política de conteúdo
 
@@ -124,8 +124,7 @@ conflito de sincronização — no máximo evento repetido, que o servidor desca
 
 ## 12. Perguntas em aberto
 
-1. **Quem revisa as 20 cartas** antes de 28/11? A Fase 2 do plano entrega 8 cartas em rascunho; as
-   outras 12 não existem ainda. Sem revisor nomeado, R5 e R6 passam no teste e falham no propósito.
+1. **Quem revisa as 80 cartas** antes de 28/11? As 80 cartas existem em `rascunho` (catalog_version 2). Sem revisor nomeado, R5 e R6 passam no teste e falham no propósito.
 2. **Onde a demo é publicada** (Coolify ou outra máquina)? Depende de acesso do responsável.
 3. **O painel público entra na entrega** ou fica só a rota de agregado? Decide esforço de UI na Fase 3.
 

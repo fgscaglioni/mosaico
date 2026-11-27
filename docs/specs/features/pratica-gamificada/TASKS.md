@@ -31,6 +31,11 @@ Sem migration: os eventos são gravados em IndexedDB e serializados no cliente.
 - [ ] `src/routes/Card.svelte` (novo): enunciado, alternativas, feedback e retentativa. (R1, R7)
 - [ ] `src/app.css` (novo): alvo de 44 px, contraste AA, `aria-live` no feedback, percentual em texto. (R7)
 
+- [x] `src/lib/domain/shuffle.ts` (novo): `embaralharIndices` por Fisher-Yates, puro e testável. (R9)
+- [x] `tests/shuffle.test.ts` (novo): permutação, determinismo com aleatório fixo e variação de ordem. (V9)
+- [x] `src/routes/Card.svelte`: embaralha a cada apresentação e retentativa, converte a posição
+  exibida de volta ao índice original antes de `recordAnswer`. (R9)
+
 ## Fase 4 - testes e documentação
 
 - [ ] `npx svelte-check --tsconfig ./tsconfig.json` devolve `0 errors`. (V7)

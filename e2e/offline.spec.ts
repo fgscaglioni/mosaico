@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { clicarRespostaCorreta } from "./responder";
 
 test.describe("Modo offline", () => {
   test.beforeEach(async ({ page }) => {
@@ -25,7 +26,7 @@ test.describe("Modo offline", () => {
 
     await context.setOffline(true);
 
-    await page.locator(".opcao").nth(1).click();
+    await clicarRespostaCorreta(page);
     const confirmar = page.getByRole("button", { name: /Confirmar resposta/i });
     await expect(confirmar).toBeEnabled();
     await confirmar.click();
@@ -41,7 +42,7 @@ test.describe("Modo offline", () => {
     await page.waitForFunction(() => location.hash.includes("/carta/"));
     await expect(page.locator(".enunciado")).toBeVisible();
 
-    await page.locator(".opcao").nth(1).click();
+    await clicarRespostaCorreta(page);
     const confirmar = page.getByRole("button", { name: /Confirmar resposta/i });
     await expect(confirmar).toBeEnabled();
     await confirmar.click();

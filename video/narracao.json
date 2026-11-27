@@ -1,6 +1,6 @@
 {
   "voice": "pt-BR-FranciscaNeural",
-  "rate": "+4%",
+  "rate": "-2%",
   "canvas": {
     "width": 1920,
     "height": 1080,
@@ -13,7 +13,7 @@
       "kicker": "O PROBLEMA",
       "titulo": "Sem internet, a aula não para",
       "linha": "Escola pública, laboratório offline. Como ensinar respeito sem depender da rede?",
-      "narracao": "Escola pública. Laboratório sem internet. Como ensinar respeito quando a rede não chega? O Mosaico é um álbum de cartas para crianças de oito a onze anos. Ele abre e joga sem conexão."
+      "narracao": "Imagine uma escola pública, com o laboratório de informática offline. Como ensinar respeito aos pequenos quando a internet simplesmente não chega? Foi para isso que nasceu o Mosaico: um álbum de cartinhas para crianças de oito a onze anos, que abre e funciona todinho sem conexão."
     },
     {
       "id": "cena2",
@@ -21,8 +21,8 @@
       "clip": "cena2.mp4",
       "kicker": "O PRODUTO",
       "titulo": "Um álbum que se completa",
-      "linha": "Quatro temas, cinco cartas cada. Progresso guardado no aparelho.",
-      "narracao": "Cada tema tem cinco cartas. Quatro temas: bullying, racismo, xenofobia e violência de gênero. No topo, nível, XP, sequência e medalhas. Tudo guardado no aparelho."
+      "linha": "Quatro temas, vinte cartas cada. Progresso guardado no aparelho.",
+      "narracao": "São quatro temas, com vinte cartas em cada um: bullying, racismo, xenofobia e violência de gênero. Lá no topo, a criança acompanha o nível, os pontos, a sequência de dias e as medalhinhas. E tudo isso fica guardado com carinho no próprio aparelho."
     },
     {
       "id": "cena3",
@@ -31,7 +31,7 @@
       "kicker": "PROVA",
       "titulo": "Modo avião, app funcionando",
       "linha": "Rede desligada no navegador. XP e medalha sem consultar servidor.",
-      "narracao": "Agora o modo avião. A rede cai, e o app continua. A criança lê a situação, escolhe a resposta e recebe retorno na hora. O acerto soma dez pontos. A medalha aparece sem consultar servidor."
+      "narracao": "E olha só: com a rede desligada, o app continua firme. A criança lê a situação, escolhe com calma a resposta e recebe um retorno na hora. Quando acerta, ganha dez pontinhos, e a medalha aparece sem precisar falar com servidor nenhum."
     },
     {
       "id": "cena4",
@@ -40,7 +40,7 @@
       "kicker": "SINCRONIZAÇÃO",
       "titulo": "O evento sobe, o dado pessoal não",
       "linha": "Log append-only. Zero nome, zero conta, zero texto livre.",
-      "narracao": "Quando a rede volta, os eventos sobem. O painel soma respostas e acertos por tema. Sobe o evento: nenhum nome, nenhuma conta, nenhum texto livre."
+      "narracao": "Quando a internet volta, os eventos sobem devagarinho. O painel soma as respostas e os acertos de cada tema. E o que sobe é só o evento: nenhum nome, nenhuma conta, nenhum texto livre. A privacidade da criança fica a salvo."
     },
     {
       "id": "cena5",
@@ -49,7 +49,7 @@
       "kicker": "CURADORIA",
       "titulo": "Cada carta tem fonte e explicação",
       "linha": "Lei 13.185/2015 · Lei 7.716/1989 · Lei 10.639/2003 · BNCC",
-      "narracao": "Toda carta tem fonte e explicação. As perguntas vêm de lei brasileira: bullying na Lei treze mil cento e oitenta e cinco, racismo na sete mil setecentos e dezesseis, cultura afro-brasileira na dez mil seiscentos e trinta e nove. Nada é criado em tempo de execução."
+      "narracao": "E cada cartinha tem uma fonte e uma explicação, com muito cuidado. As perguntas nascem de leis brasileiras: o bullying está na Lei treze mil cento e oitenta e cinco, o racismo na sete mil setecentos e dezesseis, e a cultura afro-brasileira na dez mil seiscentos e trinta e nove. Nada aqui é inventado na hora."
     },
     {
       "id": "cena6",
@@ -57,7 +57,7 @@
       "kicker": "ARQUITETURA",
       "titulo": "Log de eventos, não estado central",
       "linha": "Aparelho grava · servidor agrega · service worker guarda",
-      "narracao": "A arquitetura é um log de eventos. O aparelho grava, o servidor só agrega. Sem estado central e sem conflito. O service worker guarda o que já foi baixado, e o app abre sem rede."
+      "narracao": "Por dentro, a arquitetura é simples e tranquila: um registro de eventos. O aparelho anota, e o servidor só soma. Sem estado central, sem conflito. E o que já foi baixado fica guardado, então o app abre sempre, mesmo sem rede."
     },
     {
       "id": "cena7",
@@ -66,7 +66,7 @@
       "kicker": "ACOLHIMENTO",
       "titulo": "Ajuda em toda tela",
       "linha": "Disque 100 · Ligue 180 · CVV 188",
-      "narracao": "Em toda tela existe o botão de ajuda. Disque cem, Ligue cento e oitenta, CVV cento e oitenta e oito. O Mosaico não recebe relato, e não substitui o acolhimento."
+      "narracao": "E, em qualquer tela, tem um botãozinho de ajuda. Disque cem, Ligue cento e oitenta, CVV cento e oitenta e oito. O Mosaico não recebe relatos e não substitui o acolhimento, mas aponta o caminho para quem pode ajudar."
     },
     {
       "id": "cena8",
@@ -74,7 +74,7 @@
       "kicker": "HACK BRASIL 2026",
       "titulo": "Mosaico",
       "linha": "Peças que ensinam respeito",
-      "narracao": "Mosaico. Peças que ensinam respeito. Hack Brasil, dois mil e vinte e seis. Trilha acesso à educação."
+      "narracao": "Mosaico: pecinhas que ensinam respeito. Hack Brasil dois mil e vinte e seis, na trilha de acesso à educação."
     }
   ]
 }

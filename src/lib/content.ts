@@ -33,7 +33,7 @@ export const CardSchema = z.object({
 
 export const CatalogSchema = z.object({
   catalog_version: z.number().int().positive(),
-  cards: z.array(CardSchema).length(20),
+  cards: z.array(CardSchema).length(80),
 });
 
 export type Card = z.infer<typeof CardSchema>;

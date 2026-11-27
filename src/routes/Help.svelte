@@ -4,6 +4,7 @@
   import { initStore, recordHelpOpen } from "../lib/store.svelte";
   import { helpContent } from "../lib/content";
   import Icon from "../lib/Icon.svelte";
+  import Topo from "../lib/components/Topo.svelte";
 
   onMount(async () => {
     await initStore();
@@ -15,12 +16,7 @@
   }
 </script>
 
-<header class="topo">
-  <button class="voltar" onclick={goBack} aria-label="Voltar ao início">
-    <Icon name="arrow-left" size={24} />
-  </button>
-  <h1>Canais de Ajuda</h1>
-</header>
+<Topo titulo="Canais de Ajuda" onVoltar={goBack} />
 
 <main class="tela-ajuda">
   <section class="dica-adulto" aria-label="Orientação principal">
@@ -56,38 +52,6 @@
 </main>
 
 <style>
-  .topo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .voltar {
-    width: 44px;
-    height: 44px;
-    border: none;
-    background: transparent;
-    font-size: 24px;
-    color: var(--text-primary);
-    cursor: pointer;
-    border-radius: var(--raio-botao);
-  }
-
-  .voltar:hover,
-  .voltar:focus-visible {
-    background: var(--rule);
-  }
-
-  .topo h1 {
-    margin: 0;
-    font-size: 22px;
-    flex: 1;
-    text-align: center;
-  }
-
   .tela-ajuda {
     max-width: 600px;
     margin: 0 auto;
@@ -153,8 +117,8 @@
   }
 
   .canal-what {
-    font-size: 13px;
-    opacity: 0.8;
+    font-size: var(--texto-sm);
+    color: var(--text-secondary);
     line-height: 1.3;
   }
 
@@ -165,7 +129,7 @@
     min-height: 44px;
     padding: 8px 16px;
     background: var(--color-primary);
-    color: var(--bg-primary);
+    color: var(--text-on-color);
     border-radius: var(--raio-botao);
     font-weight: 700;
     font-size: 18px;
@@ -193,8 +157,8 @@
     text-align: center;
     padding: 16px;
     border-top: 1px solid var(--rule);
-    font-size: 12px;
-    opacity: 0.7;
+    font-size: var(--texto-sm);
+    color: var(--text-secondary);
     line-height: 1.4;
   }
 

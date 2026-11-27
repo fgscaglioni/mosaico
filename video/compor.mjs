@@ -270,6 +270,8 @@ const raiz = `<!doctype html>
      data-width="1920" data-height="1080">
 ${hosts}
 
+  <audio id="trilha" class="clip" data-start="0" data-duration="${total}" data-track-index="8" src="media/trilha.mp3"></audio>
+
   <div class="marca" data-layout-ignore>
     <span class="marca-ponto"></span>
     <span class="marca-nome">Mosaico</span>
@@ -301,6 +303,7 @@ for (const c of cenas) {
   }
 }
 copyFileSync(resolve(AQUI, "gsap.min.js"), resolve(PROJETO, "gsap.min.js"));
+copiar(resolve(AUDIO, "trilha.mp3"), "trilha.mp3");
 writeFileSync(
   resolve(PROJETO, "meta.json"),
   JSON.stringify({ id: "mosaico-demo", name: "Mosaico — demo Hack Brasil 2026" }, null, 2),

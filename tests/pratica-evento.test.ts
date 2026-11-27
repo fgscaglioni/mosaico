@@ -88,7 +88,7 @@ describe("resposta_registra_evento_com_xp (V1)", () => {
     expect(events[0].card_id).toBe("bullying-01");
     expect(events[0].event_id).toBeDefined();
     expect(events[0].device_id).toBe(deviceId);
-    expect(events[0].catalog_version).toBe(1);
+    expect(events[0].catalog_version).toBe(catalog.catalog_version);
     expect(pending).toHaveLength(1);
   });
 

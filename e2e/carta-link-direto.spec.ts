@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { clicarRespostaCorreta } from "./responder";
 
 // Regressão: abrir uma carta por link direto precisa definir o tema e gravar a resposta.
 // Sem isso, recordAnswer saía cedo, nada era salvo e a tela não dava feedback.
@@ -7,7 +8,7 @@ test.describe("Link direto para uma carta", () => {
     await page.goto("/#/carta/bullying-01");
     await expect(page.locator(".enunciado")).toBeVisible();
 
-    await page.locator(".opcao").nth(1).click();
+    await clicarRespostaCorreta(page);
     await expect(page.getByRole("button", { name: /Confirmar resposta/i })).toBeEnabled();
     await page.getByRole("button", { name: /Confirmar resposta/i }).click();
 

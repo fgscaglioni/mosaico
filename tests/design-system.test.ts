@@ -86,7 +86,7 @@ describe("design system indie game UI", () => {
     expect(css).toContain("--raio-cards: 24px");
     expect(css).toContain("--raio-botao: 14px");
     expect(read("src/App.svelte")).toContain("0 4px 0");
-    expect(read("src/routes/Home.svelte")).toContain("translateY(3px)");
+    expect(read("src/lib/components/TemaCard.svelte")).toContain("translateY(3px)");
     expect(read("src/routes/Card.svelte")).toContain("translateY(2px)");
   });
 
@@ -105,8 +105,15 @@ describe("design system indie game UI", () => {
   });
 
   it("ícones SVG sem emoji nas rotas", () => {
-    for (const rota of ["Home", "Theme", "Card", "Progress", "Help"]) {
+    for (const rota of ["Card", "Progress", "Help"]) {
       expect(read(`src/routes/${rota}.svelte`)).toContain("Icon.svelte");
+    }
+    // Home e Theme consomem os ícones via componentes compartilhados.
+    for (const componente of ["Topo", "TemaCard"]) {
+      expect(read(`src/lib/components/${componente}.svelte`)).toContain("Icon.svelte");
+    }
+    for (const rota of ["Home", "Theme"]) {
+      expect(read(`src/routes/${rota}.svelte`)).toMatch(/Topo\.svelte|TemaCard\.svelte/);
     }
   });
 });

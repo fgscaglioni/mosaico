@@ -73,6 +73,23 @@ try {
     }
   }
 
+  // Trilha sonora de fundo: pad sintetizado em ffmpeg (sem arquivo de terceiros),
+  // já mixado baixo, cerca de 27 dB abaixo da narração. Gera sempre, mesmo com --sem-tts.
+  mkdirSync(resolve(OUT, "audio"), { recursive: true });
+  rodar("ffmpeg", [
+    "-y", "-loglevel", "error",
+    "-f", "lavfi", "-i", "sine=frequency=110:duration=180",
+    "-f", "lavfi", "-i", "sine=frequency=164.81:duration=180",
+    "-f", "lavfi", "-i", "sine=frequency=220:duration=180",
+    "-f", "lavfi", "-i", "sine=frequency=261.63:duration=180",
+    "-filter_complex",
+    "[0:a]volume=0.5[t0];[1:a]volume=0.35[t1];[2:a]volume=0.25[t2];[3:a]volume=0.2[t3];" +
+      "[t0][t1][t2][t3]amix=inputs=4:duration=longest:dropout_transition=0," +
+      "lowpass=f=900,tremolo=f=0.25:d=0.4,volume=0.45,afade=t=in:st=0:d=4,afade=t=out:st=172:d=8",
+    "-c:a", "libmp3lame", "-b:a", "96k",
+    resolve(OUT, "audio", "trilha.mp3"),
+  ]);
+
   rodar("node", ["video/compor.mjs"]);
 
   const ambiente = {

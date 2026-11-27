@@ -56,6 +56,9 @@ calcula do seu jeito, o placar do aluno diverge do agregado do servidor e ningu�
   o percentual em texto, de modo que cor não seja o único canal de informação.
 - **R8.** A tela de início mostra nível, XP, sequência e número de medalhas, todos derivados do mesmo
   cálculo do evento registrado.
+- **R9.** A cada apresentação de uma carta, as alternativas são exibidas em ordem embaralhada,
+  gerada por permutação uniforme dos índices originais; o evento registado usa o índice original da
+  alternativa escolhida, nunca a posição exibida.
 
 ## Critérios de verificação
 
@@ -74,6 +77,9 @@ calcula do seu jeito, o placar do aluno diverge do agregado do servidor e ningu�
   de estilo confirma `min-height: 44px` em botão e `aria-live` no bloco de feedback.
 - **V8 (R8).** `npm run dev`, responder uma carta e verificar que o XP da tela de início sobe para o
   mesmo valor do evento gravado no IndexedDB.
+- **V9 (R9).** `tests/shuffle.test.ts::embaralharIndices`: permutação completa sem repetição, ordem
+  determinística com aleatório fixo e ordens diferentes em apresentações sucessivas; a resposta certa
+  continua identificável pelo texto após o embaralhamento.
 
 ## Fora de escopo
 

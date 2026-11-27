@@ -4,10 +4,26 @@
   import { store, initStore, loadCard, recordAnswer, retry, clearFeedback } from "../lib/store.svelte";
   import { catalog } from "../lib/content";
   import Icon from "../lib/Icon.svelte";
+  import Topo from "../lib/components/Topo.svelte";
+  import { embaralharIndices } from "../lib/domain/shuffle";
 
   let selectedOption = $state<number | null>(null);
   let feedbackVisible = $state(false);
   let feedbackType = $state<"correct" | "wrong" | null>(null);
+  // Ordem de exibição: permutação dos índices originais das alternativas.
+  // Nova a cada apresentação da carta, para não decorar por posição.
+  let ordem = $state<number[]>([]);
+  let cartaApresentada = $state<string | null>(null);
+
+  // Nova apresentação (outra carta) gera nova ordem e limpa a seleção.
+  $effect(() => {
+    const card = store.currentCard;
+    if (card && card.id !== cartaApresentada) {
+      cartaApresentada = card.id;
+      ordem = embaralharIndices(card.options.length);
+      selectedOption = null;
+    }
+  });
 
   onMount(async () => {
     await initStore();
@@ -35,7 +51,8 @@
 
   async function submitAnswer() {
     if (selectedOption === null || !store.currentCard) return;
-    await recordAnswer(store.currentCard.id, selectedOption);
+    // selectedOption é a posição exibida; o evento grava o índice original.
+    await recordAnswer(store.currentCard.id, ordem[selectedOption]);
     selectedOption = null;
     if (store.feedback) {
       feedbackType = store.feedback.type;
@@ -52,6 +69,10 @@
   function handleRetry() {
     retry();
     selectedOption = null;
+    // Nova tentativa, nova apresentação: as alternativas mudam de lugar.
+    if (store.currentCard) {
+      ordem = embaralharIndices(store.currentCard.options.length);
+    }
     closeFeedback();
   }
 
@@ -75,16 +96,13 @@
 </script>
 
 {#if store.currentCard}
-  <header class="topo">
-    <button class="voltar" onclick={goBack} aria-label="Voltar aos temas">
-    <Icon name="arrow-left" size={24} />
-  </button>
+  <Topo onVoltar={goBack} voltarLabel="Voltar aos temas" espacado>
     <div class="tema-badge" style="--tema-cor: var(--tema-{store.currentCard.theme})">
       <span class="tema-ponto"></span>
       <span>{store.currentCard.theme}</span>
     </div>
     <span class="tentativa">Tentativa {store.attempt}</span>
-  </header>
+  </Topo>
 
   <main class="tela-carta">
     <div class="objetivo">
@@ -97,18 +115,20 @@
     </section>
 
     <div class="alternativas" role="radiogroup" aria-label="Opções de resposta">
-      {#each store.currentCard.options as option, index}
+      {#each ordem as original, posicao}
+        {@const option = store.currentCard.options[original]}
+        {@const ehCorreta = original === store.currentCard.answer_index}
         <button
           class="opcao"
-          class:selecionada={selectedOption === index}
-          class:correta={store.feedback && index === store.currentCard.answer_index}
-          class:incorreta={store.feedback && selectedOption === index && index !== store.currentCard.answer_index}
+          class:selecionada={selectedOption === posicao}
+          class:correta={!!store.feedback && ehCorreta}
+          class:incorreta={!!store.feedback && selectedOption === posicao && !ehCorreta}
           disabled={!!store.feedback}
-          onclick={() => selectOption(index)}
+          onclick={() => selectOption(posicao)}
           role="radio"
-          aria-checked={selectedOption === index}
+          aria-checked={selectedOption === posicao}
         >
-          <span class="opcao-letra">{String.fromCharCode(65 + index)}</span>
+          <span class="opcao-letra">{String.fromCharCode(65 + posicao)}</span>
           <span class="opcao-texto">{option}</span>
         </button>
       {/each}
@@ -194,37 +214,17 @@
 {/if}
 
 <style>
-  .topo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .voltar {
-    width: 44px;
-    height: 44px;
-    border: none;
-    background: transparent;
-    font-size: 24px;
-    color: var(--text-primary);
-    cursor: pointer;
-    border-radius: var(--raio-botao);
-  }
-
-  .voltar:hover,
-  .voltar:focus-visible {
-    background: var(--rule);
-  }
-
   .tema-badge {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: capitalize;
+    font-size: var(--texto-sm);
+    padding: var(--esp-2) var(--esp-3);
+    background: var(--bg-secondary);
+    border: 2px solid var(--rule);
+    border-radius: var(--raio-pill);
   }
 
   .tema-ponto {
@@ -235,8 +235,9 @@
   }
 
   .tentativa {
-    font-size: 13px;
-    opacity: 0.7;
+    font-size: var(--texto-sm);
+    font-weight: 700;
+    color: var(--text-secondary);
   }
 
   .tela-carta {
@@ -260,8 +261,8 @@
   }
 
   .enunciado {
-    font-size: var(--texto-lg);
-    line-height: 1.4;
+    font-size: var(--texto-xl);
+    line-height: 1.5;
     margin-bottom: var(--esp-8);
   }
 
@@ -349,6 +350,10 @@
     font-size: var(--texto-base);
     line-height: 1.4;
     padding-top: 3px;
+  }
+
+  .opcao.selecionada .opcao-texto {
+    font-weight: 700;
   }
 
   .botao-confirmar {

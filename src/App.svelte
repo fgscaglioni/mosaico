@@ -9,8 +9,11 @@
   import Progress from "./routes/Progress.svelte";
   import Help from "./routes/Help.svelte";
   import Panel from "./routes/Panel.svelte";
+  import AvisoExperimental from "./lib/components/AvisoExperimental.svelte";
 
   let dark = $state(false);
+  // O aviso volta a cada carregamento: é um aviso de fase, não uma preferência.
+  let avisoVisivel = $state(true);
 
   onMount(() => {
     dark = document.documentElement.getAttribute("data-theme") === "dark";
@@ -49,6 +52,12 @@
       <a href="#/ajuda" class="link-ajuda">Ajuda</a>
     </div>
   </nav>
+
+  {#if avisoVisivel}
+    <div class="aviso-faixa">
+      <AvisoExperimental ondismiss={() => (avisoVisivel = false)} />
+    </div>
+  {/if}
 
   <main>
     {#if $route.path === "/"}
@@ -152,4 +161,8 @@
 
   .link-ajuda:hover, .link-ajuda:focus-visible { opacity: 0.92; text-decoration: none; }
   .link-ajuda:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-secondary-shadow); }
+
+  .aviso-faixa {
+    padding: var(--esp-3) var(--esp-4) 0;
+  }
 </style>

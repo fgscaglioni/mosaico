@@ -5,6 +5,8 @@
   import { getBadgeInfo } from "../lib/store.svelte";
   import { BADGES } from "../lib/domain/badges";
   import Icon from "../lib/Icon.svelte";
+  import Topo from "../lib/components/Topo.svelte";
+  import Metrica from "../lib/components/Metrica.svelte";
 
   onMount(async () => {
     await initStore();
@@ -15,12 +17,7 @@
   }
 </script>
 
-<header class="topo">
-  <button class="voltar" onclick={goBack} aria-label="Voltar ao início">
-    <Icon name="arrow-left" size={24} />
-  </button>
-  <h1>Seu Progresso</h1>
-</header>
+<Topo titulo="Seu Progresso" onVoltar={goBack} />
 
 <main class="tela-progresso">
   <section class="resumo-geral">
@@ -34,22 +31,10 @@
     </div>
 
     <div class="metricas-grid">
-      <div class="metrica">
-        <span class="rotulo">Total de XP</span>
-        <span class="valor">{store.progress.xp}</span>
-      </div>
-      <div class="metrica">
-        <span class="rotulo">Sequência</span>
-        <span class="valor">{store.progress.streak} dias</span>
-      </div>
-      <div class="metrica">
-        <span class="rotulo">Respostas</span>
-        <span class="valor">{store.progress.respostas}</span>
-      </div>
-      <div class="metrica">
-        <span class="rotulo">Acertos</span>
-        <span class="valor">{store.progress.acertos}</span>
-      </div>
+      <Metrica rotulo="Total de XP" valor={store.progress.xp} />
+      <Metrica rotulo="Sequência" valor={`${store.progress.streak} dias`} />
+      <Metrica rotulo="Respostas" valor={store.progress.respostas} />
+      <Metrica rotulo="Acertos" valor={store.progress.acertos} />
     </div>
   </section>
 
@@ -97,38 +82,6 @@
 </main>
 
 <style>
-  .topo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .voltar {
-    width: 44px;
-    height: 44px;
-    border: none;
-    background: transparent;
-    font-size: 24px;
-    color: var(--text-primary);
-    cursor: pointer;
-    border-radius: var(--raio-botao);
-  }
-
-  .voltar:hover,
-  .voltar:focus-visible {
-    background: var(--rule);
-  }
-
-  .topo h1 {
-    margin: 0;
-    font-size: 22px;
-    flex: 1;
-    text-align: center;
-  }
-
   .tela-progresso {
     max-width: 600px;
     margin: 0 auto;
@@ -176,21 +129,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-bottom: 32px;
-  }
-
-  .metrica {
-    background: var(--bg-primary);
-    border: 2px solid var(--rule);
-    border-radius: var(--raio-botao);
-    padding: 16px;
-    text-align: center;
-  }
-
-  .metrica .valor {
-    display: block;
-    font-size: 24px;
-    font-weight: 700;
-    margin-top: 4px;
   }
 
   h2 {

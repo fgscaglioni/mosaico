@@ -42,7 +42,7 @@ de ódio), quando o produto é o oposto disso.
 
 ## Requisitos
 
-- **R1.** O catálogo contém 20 cartas, 5 por tema, com os temas `bullying`, `racismo`, `xenofobia` e
+- **R1.** O catálogo contém 80 cartas, 20 por tema, com os temas `bullying`, `racismo`, `xenofobia` e
   `genero`.
 - **R2.** Cada carta traz `id` único, `theme`, `age_band` (`8-11` ou `12-14`), `objective`, `stem`,
   `options` com 3 ou 4 alternativas, `answer_index` válido, `explanation` com no mínimo 60 caracteres,
@@ -57,8 +57,8 @@ de ódio), quando o produto é o oposto disso.
 
 ## Critérios de verificação
 
-- **V1 (R1).** `tests/cartas.test.ts::catalogo_tem_vinte_cartas`: a leitura do catálogo devolve 20
-  cartas e 5 por tema.
+- **V1 (R1).** `tests/cartas.test.ts::catalogo_tem_oitenta_cartas`: a leitura do catálogo devolve 80
+  cartas e 20 por tema.
 - **V2 (R2).** `tests/cartas.test.ts::toda_carta_passa_no_esquema`: o parse `zod` do catálogo não
   levanta erro e cada `answer_index` aponta para alternativa existente.
 - **V3 (R3).** `tests/cartas.test.ts::carta_sem_fonte_reprova` e
@@ -84,7 +84,7 @@ de ódio), quando o produto é o oposto disso.
 
 ## Perguntas em aberto
 
-- **Quem assina a revisão das 20 cartas antes de 28/11?** Decide o dono. Sem revisor nomeado, as
+- **Quem assina a revisão das 80 cartas antes de 28/11?** Decide o dono. Sem revisor nomeado, as
   cartas ficam em `rascunho` e o `STATE.md` registra o bloqueio.
 - **Alguma carta precisa de faixa `12-14`?** Depende do revisor: conteúdo sobre violência de gênero
   pode exigir idade maior. Muda o filtro da tela inicial.

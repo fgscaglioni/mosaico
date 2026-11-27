@@ -1,6 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { navigate } from "../lib/router.svelte";
+  import Topo from "../lib/components/Topo.svelte";
+  import Metrica from "../lib/components/Metrica.svelte";
 
   interface Aggregate {
     respostas: number;
@@ -44,10 +46,7 @@
   }
 </script>
 
-<header class="topo">
-  <button class="voltar" onclick={goBack} aria-label="Voltar ao início">←</button>
-  <h1>Painel Público</h1>
-</header>
+<Topo titulo="Painel Público" onVoltar={goBack} />
 
 <main class="tela-painel">
   {#if loading}
@@ -61,22 +60,10 @@
   {:else}
     <section class="resumo-geral">
       <div class="metricas-grid">
-        <div class="metrica">
-          <span class="rotulo">Total de respostas</span>
-          <span class="valor">{aggregate.respostas}</span>
-        </div>
-        <div class="metrica">
-          <span class="rotulo">Total de acertos</span>
-          <span class="valor">{aggregate.acertos}</span>
-        </div>
-        <div class="metrica">
-          <span class="rotulo">XP total</span>
-          <span class="valor">{aggregate.xp}</span>
-        </div>
-        <div class="metrica">
-          <span class="rotulo">Aparelhos sincronizados</span>
-          <span class="valor">{aggregate.aparelhos}</span>
-        </div>
+        <Metrica rotulo="Total de respostas" valor={aggregate.respostas} />
+        <Metrica rotulo="Total de acertos" valor={aggregate.acertos} />
+        <Metrica rotulo="XP total" valor={aggregate.xp} />
+        <Metrica rotulo="Aparelhos sincronizados" valor={aggregate.aparelhos} />
       </div>
     </section>
 
@@ -112,38 +99,6 @@
 </main>
 
 <style>
-  .topo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .voltar {
-    width: 44px;
-    height: 44px;
-    border: none;
-    background: transparent;
-    font-size: 24px;
-    color: var(--text-primary);
-    cursor: pointer;
-    border-radius: var(--raio-botao);
-  }
-
-  .voltar:hover,
-  .voltar:focus-visible {
-    background: var(--rule);
-  }
-
-  .topo h1 {
-    margin: 0;
-    font-size: 22px;
-    flex: 1;
-    text-align: center;
-  }
-
   .tela-painel {
     max-width: 600px;
     margin: 0 auto;
@@ -157,12 +112,12 @@
   }
 
   .erro {
-    background: rgba(181, 52, 43, 0.1);
+    background: var(--bg-secondary);
     border: 2px solid var(--color-error);
     border-radius: var(--raio);
     padding: 24px;
     text-align: center;
-    color: var(--color-error);
+    color: var(--color-error-strong);
   }
 
   .erro-detalhe {
@@ -179,27 +134,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-  }
-
-  .metrica {
-    background: var(--bg-primary);
-    border: 2px solid var(--rule);
-    border-radius: var(--raio-botao);
-    padding: 20px;
-    text-align: center;
-  }
-
-  .metrica .rotulo {
-    display: block;
-    font-size: 12px;
-    opacity: 0.7;
-    margin-bottom: 8px;
-  }
-
-  .metrica .valor {
-    display: block;
-    font-size: 28px;
-    font-weight: 700;
   }
 
   h2 {

@@ -27,7 +27,7 @@ requisito está nas specs e o que é execução está no `IMPLEMENTATION.md`.
 | `docs/specs/PROJECT.md` | visão, política de conteúdo e de dados, condições de entrega (§7) |
 | `docs/specs/IMPLEMENTATION.md` | scaffold, comandos, ordem de execução, tokens de interface, armadilhas |
 | `docs/specs/features/` | 5 specs de feature, com requisitos `R#`, verificação `V#` e `TASKS.md` |
-| `content/cards.pt-BR.json` | 20 cartas, 5 por tema, **todas em `rascunho`** |
+| `content/cards.pt-BR.json` | 80 cartas, 20 por tema (`catalog_version` 2), **todas em `rascunho`** |
 | `content/help.json` | 4 canais de ajuda, validados por `HelpSchema` |
 | `docs/decisions/` | 4 ADRs + índice |
 | `src/`, `tests/`, `server.mjs` | scaffold + `content.ts` + `cartas.test.ts` (7) + domínio + store + telas (`Home`, `Theme`, `Card`, `Progress`, `Help`, `Panel`) + link global no `App` + `server.mjs` + `pratica.test.ts` (29) + `pratica-evento.test.ts` (4) + `ajuda.test.ts` (7) + `sync.test.ts` (4) = **51 testes verdes**, `svelte-check 0 errors` |
@@ -52,7 +52,7 @@ Progresso do plano de implementação: **T9 de T21** (implementação e testes c
 
 | Bloqueio | Impacta | Precisa de |
 |---|---|---|
-| Revisão pedagógica das 20 cartas | R2 e R5 de `cartas-curadas`; credibilidade do pitch | Humano lê e troca `review_status` para `revisado` antes de 28/11 |
+| Revisão pedagógica das 80 cartas | R2 e R5 de `cartas-curadas`; credibilidade do pitch | Humano lê e troca `review_status` para `revisado` antes de 28/11 |
 | Host de deploy | Condições de entrega, linha da demo | Acesso ao Coolify (ou outra máquina) com volume persistente |
 | Publicação do vídeo no YouTube (não listado) | Item 7.2 | Dono do projeto: subir o MP4 e colar o link no painel |
 
@@ -73,3 +73,6 @@ Progresso do plano de implementação: **T9 de T21** (implementação e testes c
 |---|---|
 | 2026-11-24 | Nome decidido (Mosaico), repositório criado e publicado, 4 ADRs, 5 specs de feature, catálogo com 20 cartas em rascunho, documento de implementação |
 | 2026-11-25 | Vídeo de demo automatizado (Playwright + edge-tts + HyperFrames, 1m43s, check verde); correção do link direto de carta, que não gravava resposta; README com como rodar |
+| 2026-11-27 | Catálogo expandido para 80 cartas (20/tema, `catalog_version` 2); extração de `Topo`/`Metrica`/`TemaCard`; auditoria do edital concluída; hospedagem recomendada no Coolify, Firebase como pós-hack |
+| 2026-11-27 | Aviso global de fase experimental (questões sem avaliação humana); alternativas embaralhadas a cada apresentação (`pratica-gamificada` R9, nova spec `fase-experimental`); vídeo refeito (1m42s, 1920x1080) |
+| 2026-11-27 | Narração do vídeo suavizada (tom quente, ritmo −2%) e trilha sonora de fundo sintetizada em ffmpeg, 27 dB abaixo da narração; vídeo final 2m10s |

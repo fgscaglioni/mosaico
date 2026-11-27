@@ -175,7 +175,7 @@ mosaico/
 ├── server.mjs
 ├── Dockerfile
 ├── content/
-│   ├── cards.pt-BR.json     # 20 cartas, já no repositório
+│   ├── cards.pt-BR.json     # 80 cartas, já no repositório
 │   └── help.json            # canais de ajuda, já no repositório
 ├── public/
 │   ├── favicon.svg
@@ -235,7 +235,7 @@ As specs são por feature; esta é a ordem que evita retrabalho. Cada linha refe
 | # | Passo | Spec |
 |---|---|---|
 | 1 | Scaffold desta seção (package.json, tsconfig, vite.config, index.html, main.ts, App mínimo) e `npm run dev` abrindo | — |
-| 2 | `content.ts` + testes do catálogo (o JSON já existe com 20 cartas) | cartas-curadas, fases 1 e 3 |
+| 2 | `content.ts` + testes do catálogo (o JSON já existe com 80 cartas) | cartas-curadas, fases 1 e 3 |
 | 3 | Domínio puro: `xp`, `streak`, `badges`, `queue` + testes | pratica-gamificada, fase 1 |
 | 4 | `types.ts`, `db.ts`, `device.ts`, `store.svelte.ts` | pratica-gamificada fase 2 + modo-offline fase 1 |
 | 5 | Telas `Home`, `Theme`, `Card` + `app.css` | pratica-gamificada, fase 3 |
@@ -301,13 +301,13 @@ verificação (`V5`), não de escrita.
 - [ ] `docker build` e `docker run` com `GET /api/health` respondendo.
 - [ ] Demo pública abre em janela anônima e responde sem rede depois do primeiro acesso.
 - [ ] Nenhum campo de texto livre no produto.
-- [ ] `content/cards.pt-BR.json` com 20 cartas e `catalog_version` coerente.
+- [ ] `content/cards.pt-BR.json` com 80 cartas e `catalog_version` coerente.
 - [ ] `docs/specs/STATE.md` atualizado com a fase concluída.
 
 ## 9. O que não fazer
 
-- **Não escrever carta nova.** O catálogo é curadoria do dono; 12 das 20 cartas foram redigidas e
-  **todas** esperam revisão humana. Alterar texto de carta exige ordem explícita.
+- **Não escrever carta nova sem ordem explícita do dono.** O catálogo é curadoria do dono; as 80
+  cartas foram redigidas por ordem em 27/11/2026 e **todas** esperam revisão humana. Alterar texto de carta exige ordem explícita.
 - **Não trocar Svelte por SvelteKit, nem Vite por outro bundler.** Decisão registrada no ADR-0002.
 - **Não colocar banco de dados.** O servidor é append-only em arquivo (ADR-0003).
 - **Não adicionar login, nome, foto, upload, chat ou ranking.** Contraria o ADR-0004 e o item 6.9 do

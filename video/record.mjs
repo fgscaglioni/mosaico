@@ -1,7 +1,7 @@
 // Grava as cenas do app com Playwright. Cada cena vira um MP4 próprio em video/out/clips/.
 // Uso: node video/record.mjs [--base http://localhost:8799] [--so cena2,cena3]
 import { chromium } from "playwright";
-import { mkdirSync, rmSync } from "node:fs";
+import { mkdirSync, readFileSync, rmSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -39,8 +39,14 @@ async function aquecerServiceWorker(page) {
 async function responderCarta(page, pausaLeitura = 2200) {
   await page.locator(".enunciado").waitFor({ state: "visible" });
   await espera(pausaLeitura);
-  // todas as cartas do catálogo têm answer_index = 1; o teste do catálogo garante isso
-  await page.locator(".opcao").nth(1).click();
+  // As alternativas são embaralhadas a cada apresentação: clica na correta pelo texto.
+  const catalogo = JSON.parse(
+    readFileSync(resolve(AQUI, "../content/cards.pt-BR.json"), "utf-8"),
+  );
+  const enunciado = (await page.locator(".enunciado").innerText()).trim();
+  const carta = catalogo.cards.find((c) => enunciado.includes(c.stem.trim().slice(0, 40)));
+  if (!carta) throw new Error("carta exibida não encontrada no catálogo");
+  await page.locator(".opcao", { hasText: carta.options[carta.answer_index] }).click();
   await espera(900);
   await page.getByRole("button", { name: /Confirmar resposta/i }).click();
   await page.locator('[aria-live="polite"]').filter({ hasText: /Muito bem|Ainda não/ }).waitFor();
